@@ -12,7 +12,7 @@ const Members = () => {
       role: 'Project Manager',
       department: 'Computer Engineering',
       year: '4th Year',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face',
+      image: 'https://media.licdn.com/dms/image/v2/D4D03AQECgh5OkLhvNA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1706764420491?e=1756339200&v=beta&t=U--G_2tB7vr7JYaRCluCICCdEUDu2fbkGxfZi18faHc',
       bio: 'Leading project coordination and strategic planning for all robotics competitions. Specializes in system integration and team management.',
       skills: ['Project Management', 'System Integration', 'Leadership', 'Strategic Planning'],
       contact: {
@@ -27,7 +27,7 @@ const Members = () => {
       role: 'Managerial',
       department: 'Industrial Engineering',
       year: '3rd Year',
-      image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=300&h=300&fit=crop&crop=face',
+      image: 'https://media.licdn.com/dms/image/v2/D4E03AQHN1I1cQiQGTw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1699149581493?e=1756339200&v=beta&t=tF_jtuWoxcbxxTqE-KYnCQXsd3dEClZfi-CGUfDxa3U',
       bio: 'Responsible for team operations, resource management, and administrative coordination. Ensures smooth workflow and effective communication.',
       skills: ['Operations Management', 'Resource Planning', 'Communication', 'Process Optimization'],
       contact: {
@@ -42,7 +42,7 @@ const Members = () => {
       role: 'Team Leader',
       department: 'Mechanical Engineering',
       year: '4th Year',
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face',
+      image: 'https://media.licdn.com/dms/image/v2/D5603AQEvlHmgFBCq6w/profile-displayphoto-shrink_800_800/B56ZX2ranXHQAg-/0/1743600331886?e=1756339200&v=beta&t=9aSQN7bqmONVPuMCgnaP97utEFx_Op4fDHmQzSR3Ies',
       bio: 'Technical leader focusing on mechanical design and robot construction. Expertise in CAD design, manufacturing, and system optimization.',
       skills: ['Mechanical Design', 'CAD/CAM', 'Manufacturing', 'Technical Leadership'],
       contact: {
