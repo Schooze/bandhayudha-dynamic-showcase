@@ -58,7 +58,7 @@ const Members = () => {
     {
       name: 'Mechanical Division',
       description: 'Robot design, manufacturing, and mechanical systems',
-      memberCount: 8,
+      memberCount: 10,
       color: 'bg-robot-orange'
     },
     {
@@ -70,7 +70,7 @@ const Members = () => {
     {
       name: 'Programming Division',
       description: 'Software development, AI algorithms, and robot control',
-      memberCount: 7,
+      memberCount: 11,
       color: 'bg-success-green'
     },
     {
