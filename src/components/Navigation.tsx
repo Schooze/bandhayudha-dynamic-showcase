@@ -120,7 +120,7 @@ const Navigation = () => {
             ))}
           </div>
           
-          {/* Dropdown Menu - Desktop Only */}
+          {/* Desktop Dropdown Menu - Always show hamburger button */}
           <div className="hidden lg:block relative" ref={dropdownRef}>
             <Button
               variant="ghost"
@@ -128,7 +128,7 @@ const Navigation = () => {
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
               className="hover:bg-accent"
             >
-              {isDropdownOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              <Menu className="h-5 w-5" />
             </Button>
 
             {/* Dropdown Content */}
@@ -156,7 +156,7 @@ const Navigation = () => {
             )}
           </div>
 
-          {/* Mobile Menu Button - Single hamburger for mobile */}
+          {/* Mobile Menu Button */}
           <Button
             variant="ghost"
             size="icon"
