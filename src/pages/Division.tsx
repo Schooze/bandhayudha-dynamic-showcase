@@ -23,7 +23,6 @@ const Division = () => {
       ],
       skills: [
         'SolidWorks',
-        'AutoCAD',
         'CNC Machining',
         '3D Printing',
         'Welding',
@@ -53,7 +52,6 @@ const Division = () => {
       ],
       skills: [
         'Altium Designer',
-        'KiCad',
         'Circuit Analysis',
         'Embedded Systems',
         'Signal Processing',
@@ -84,10 +82,12 @@ const Division = () => {
       skills: [
         'C/C++',
         'Python',
+        'STM32 Programming',
         'ROS',
         'OpenCV',
         'Machine Learning',
-        'Real-time Systems'
+        'Real-time Systems',
+        'Web Development'
       ],
       projects: [
         'Autonomous Navigation',
@@ -95,7 +95,7 @@ const Division = () => {
         'Motion Control',
         'Competition Strategy AI'
       ],
-      memberCount: 7
+      memberCount: 11
     },
     {
       name: 'Management Division',

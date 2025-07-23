@@ -54,6 +54,7 @@ const Navigation = () => {
   const rightLinks = [
     { name: 'Support', href: '/support' },
     { name: 'Contact Us', href: '/contact' },
+    { name: 'Login', href: '/login' },
   ];
 
   const dropdownItems = [
@@ -115,90 +116,53 @@ const Navigation = () => {
               <Link to={link.href}>{link.name}</Link>
             </Button>
           ))}
-          
-          {/* Dropdown Menu */}
-          <div className="relative" ref={dropdownRef}>
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              className="hover:bg-accent"
-            >
-              {isDropdownOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-            </Button>
-
-            {/* Dropdown Content */}
-            {isDropdownOpen && (
-              <div className="absolute right-0 mt-2 w-56 bg-background/95 backdrop-blur-md rounded-lg shadow-lg border border-border animate-in slide-in-from-top-2 duration-200">
-                <div className="py-2">
-                  {dropdownItems.map((item) => (
-                    <a
-                      key={item.name}
-                      href={item.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={() => setIsDropdownOpen(false)}
-                      className="flex items-center px-4 py-3 text-sm text-foreground hover:bg-accent transition-colors duration-200"
-                    >
-                      <item.icon className="h-5 w-5 mr-3 text-tech-blue" />
-                      <div className="flex flex-col">
-                        <span className="font-medium">{item.name}</span>
-                        <span className="text-xs text-muted-foreground">{item.description}</span>
-                      </div>
-                    </a>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
         </div>
-
-        {/* Mobile Menu Button */}
-        <div className="lg:hidden flex items-center space-x-2">
-          {/* Mobile Dropdown Menu */}
-          <div className="relative" ref={dropdownRef}>
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              className="hover:bg-accent"
-            >
-              <Menu className="h-5 w-5" />
-            </Button>
-
-            {/* Mobile Dropdown Content */}
-            {isDropdownOpen && (
-              <div className="absolute right-0 mt-2 w-56 bg-background/95 backdrop-blur-md rounded-lg shadow-lg border border-border animate-in slide-in-from-top-2 duration-200">
-                <div className="py-2">
-                  {dropdownItems.map((item) => (
-                    <a
-                      key={item.name}
-                      href={item.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={() => setIsDropdownOpen(false)}
-                      className="flex items-center px-4 py-3 text-sm text-foreground hover:bg-accent transition-colors duration-200"
-                    >
-                      <item.icon className="h-5 w-5 mr-3 text-tech-blue" />
-                      <div className="flex flex-col">
-                        <span className="font-medium">{item.name}</span>
-                        <span className="text-xs text-muted-foreground">{item.description}</span>
-                      </div>
-                    </a>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
-
+          
+        {/* Dropdown Menu - Desktop (moved to far right) */}
+        <div className="hidden lg:block relative ml-4" ref={dropdownRef}>
           <Button
             variant="ghost"
             size="icon"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+            className="hover:bg-accent"
           >
-            {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {isDropdownOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </Button>
+
+          {/* Dropdown Content */}
+          {isDropdownOpen && (
+            <div className="absolute right-0 mt-2 w-56 bg-background/95 backdrop-blur-md rounded-lg shadow-lg border border-border animate-in slide-in-from-top-2 duration-200">
+              <div className="py-2">
+                {dropdownItems.map((item) => (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setIsDropdownOpen(false)}
+                    className="flex items-center px-4 py-3 text-sm text-foreground hover:bg-accent transition-colors duration-200"
+                  >
+                    <item.icon className="h-5 w-5 mr-3 text-tech-blue" />
+                    <div className="flex flex-col">
+                      <span className="font-medium">{item.name}</span>
+                      <span className="text-xs text-muted-foreground">{item.description}</span>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
+
+        {/* Mobile Menu Button */}
+        <Button
+          variant="ghost"
+          size="icon"
+          className="lg:hidden"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
+          {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+        </Button>
       </div>
 
       {/* Mobile Menu */}
@@ -219,7 +183,7 @@ const Navigation = () => {
               </Link>
             ))}
             <div className="pt-4 border-t border-border space-y-2">
-              {rightLinks.map((link) => (
+              {rightLinks.slice(0, -1).map((link) => (
                 <Button
                   key={link.name}
                   asChild
@@ -230,6 +194,36 @@ const Navigation = () => {
                   <Link to={link.href}>{link.name}</Link>
                 </Button>
               ))}
+              
+              {/* Login Button */}
+              <Button
+                asChild
+                variant="outline"
+                className="w-full font-medium"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <Link to="/login">Login</Link>
+              </Button>
+
+              {/* Bandhalab and Bandhadrive */}
+              <div className="pt-2 space-y-2">
+                {dropdownItems.map((item) => (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="flex items-center w-full p-3 text-sm text-foreground hover:bg-accent transition-colors duration-200 rounded-md border border-border"
+                  >
+                    <item.icon className="h-5 w-5 mr-3 text-tech-blue" />
+                    <div className="flex flex-col items-start">
+                      <span className="font-medium">{item.name}</span>
+                      <span className="text-xs text-muted-foreground">{item.description}</span>
+                    </div>
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         </div>
