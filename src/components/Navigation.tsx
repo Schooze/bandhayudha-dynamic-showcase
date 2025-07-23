@@ -80,7 +80,7 @@ const Navigation = () => {
           : 'bg-transparent'
       }`}
     >
-      <div className="container mx-auto px-4 h-16 flex items-center justify-between">
+      <div className="container mx-auto px-4 h-16 flex items-center justify-between relative">
         {/* Logo */}
         <Link to="/" className="flex items-center space-x-2">
           <img
@@ -104,67 +104,23 @@ const Navigation = () => {
           ))}
         </div>
 
-        {/* Right Side Buttons - Desktop */}
-        <div className="hidden lg:flex items-center space-x-4">
-          {rightLinks.map((link) => (
-            <Button
-              key={link.name}
-              asChild
-              variant={link.name === 'Contact Us' ? 'default' : 'outline'}
-              className="font-medium"
-            >
-              <Link to={link.href}>{link.name}</Link>
-            </Button>
-          ))}
-        </div>
+        {/* Right Side - Desktop and Mobile */}
+        <div className="flex items-center space-x-4">
+          {/* Desktop Right Side Buttons */}
+          <div className="hidden lg:flex items-center space-x-4">
+            {rightLinks.map((link) => (
+              <Button
+                key={link.name}
+                asChild
+                variant={link.name === 'Contact Us' ? 'default' : 'outline'}
+                className="font-medium"
+              >
+                <Link to={link.href}>{link.name}</Link>
+              </Button>
+            ))}
+          </div>
           
-        {/* Dropdown Menu - Desktop (moved to far right) */}
-        <div className="hidden lg:block relative ml-4" ref={dropdownRef}>
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-            className="hover:bg-accent"
-          >
-            {isDropdownOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </Button>
-
-          {/* Dropdown Content */}
-          {isDropdownOpen && (
-            <div className="absolute right-0 mt-2 w-56 bg-background/95 backdrop-blur-md rounded-lg shadow-lg border border-border animate-in slide-in-from-top-2 duration-200">
-              <div className="py-2">
-                {dropdownItems.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={() => setIsDropdownOpen(false)}
-                    className="flex items-center px-4 py-3 text-sm text-foreground hover:bg-accent transition-colors duration-200"
-                  >
-                    <item.icon className="h-5 w-5 mr-3 text-tech-blue" />
-                    <div className="flex flex-col">
-                      <span className="font-medium">{item.name}</span>
-                      <span className="text-xs text-muted-foreground">{item.description}</span>
-                    </div>
-                  </a>
-                ))}
-              </div>
-            </div>
-          )}
-        </div>
-
-        {/* Mobile Menu Button */}
-        <div className="lg:hidden flex items-center space-x-2">
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </Button>
-
-          {/* Mobile Hamburger Menu for Bandhalab & Bandhadrive */}
+          {/* Dropdown Menu - Both Desktop and Mobile */}
           <div className="relative" ref={dropdownRef}>
             <Button
               variant="ghost"
@@ -175,9 +131,9 @@ const Navigation = () => {
               {isDropdownOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </Button>
 
-            {/* Mobile Dropdown Content */}
+            {/* Dropdown Content */}
             {isDropdownOpen && (
-              <div className="absolute right-0 mt-2 w-56 bg-background/95 backdrop-blur-md rounded-lg shadow-lg border border-border animate-in slide-in-from-top-2 duration-200">
+              <div className="absolute right-0 mt-2 w-56 bg-background/95 backdrop-blur-md rounded-lg shadow-lg border border-border animate-in slide-in-from-top-2 duration-200 z-50">
                 <div className="py-2">
                   {dropdownItems.map((item) => (
                     <a
@@ -199,6 +155,16 @@ const Navigation = () => {
               </div>
             )}
           </div>
+
+          {/* Mobile Menu Button */}
+          <Button
+            variant="ghost"
+            size="icon"
+            className="lg:hidden ml-2"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </Button>
         </div>
       </div>
 
