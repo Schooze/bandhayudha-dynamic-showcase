@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, FlaskConical, Book } from 'lucide-react';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -15,6 +17,18 @@ const Navigation = () => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
   const handleRobotClick = (e: React.MouseEvent) => {
@@ -40,6 +54,21 @@ const Navigation = () => {
   const rightLinks = [
     { name: 'Support', href: '/support' },
     { name: 'Contact Us', href: '/contact' },
+  ];
+
+  const dropdownItems = [
+    {
+      name: 'Bandhalab',
+      icon: FlaskConical,
+      href: '#', // Replace with actual Bandhalab URL
+      description: 'Laboratory Resources'
+    },
+    {
+      name: 'Bandhadrive',
+      icon: Book,
+      href: '#', // Replace with actual Bandhadrive URL
+      description: 'Document Repository'
+    }
   ];
 
   return (
@@ -86,17 +115,90 @@ const Navigation = () => {
               <Link to={link.href}>{link.name}</Link>
             </Button>
           ))}
+          
+          {/* Dropdown Menu */}
+          <div className="relative" ref={dropdownRef}>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+              className="hover:bg-accent"
+            >
+              {isDropdownOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </Button>
+
+            {/* Dropdown Content */}
+            {isDropdownOpen && (
+              <div className="absolute right-0 mt-2 w-56 bg-background/95 backdrop-blur-md rounded-lg shadow-lg border border-border animate-in slide-in-from-top-2 duration-200">
+                <div className="py-2">
+                  {dropdownItems.map((item) => (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setIsDropdownOpen(false)}
+                      className="flex items-center px-4 py-3 text-sm text-foreground hover:bg-accent transition-colors duration-200"
+                    >
+                      <item.icon className="h-5 w-5 mr-3 text-tech-blue" />
+                      <div className="flex flex-col">
+                        <span className="font-medium">{item.name}</span>
+                        <span className="text-xs text-muted-foreground">{item.description}</span>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Mobile Menu Button */}
-        <Button
-          variant="ghost"
-          size="icon"
-          className="lg:hidden"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </Button>
+        <div className="lg:hidden flex items-center space-x-2">
+          {/* Mobile Dropdown Menu */}
+          <div className="relative" ref={dropdownRef}>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+              className="hover:bg-accent"
+            >
+              <Menu className="h-5 w-5" />
+            </Button>
+
+            {/* Mobile Dropdown Content */}
+            {isDropdownOpen && (
+              <div className="absolute right-0 mt-2 w-56 bg-background/95 backdrop-blur-md rounded-lg shadow-lg border border-border animate-in slide-in-from-top-2 duration-200">
+                <div className="py-2">
+                  {dropdownItems.map((item) => (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setIsDropdownOpen(false)}
+                      className="flex items-center px-4 py-3 text-sm text-foreground hover:bg-accent transition-colors duration-200"
+                    >
+                      <item.icon className="h-5 w-5 mr-3 text-tech-blue" />
+                      <div className="flex flex-col">
+                        <span className="font-medium">{item.name}</span>
+                        <span className="text-xs text-muted-foreground">{item.description}</span>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </Button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
