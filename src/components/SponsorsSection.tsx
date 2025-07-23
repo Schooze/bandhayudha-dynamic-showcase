@@ -9,7 +9,7 @@ const SponsorsSection = () => {
     },
     {
       name: 'SolidWorks',
-      logo: 'https://www.solidworks.com/sites/default/files/2021-10/solidworks-logo-horizontal.png',
+      logo: 'https://cdn.worldvectorlogo.com/logos/solidworks-logo-1.svg',
       description: '3D CAD Software'
     },
     {
