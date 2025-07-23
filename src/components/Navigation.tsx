@@ -120,8 +120,8 @@ const Navigation = () => {
             ))}
           </div>
           
-          {/* Dropdown Menu - Both Desktop and Mobile */}
-          <div className="relative" ref={dropdownRef}>
+          {/* Dropdown Menu - Desktop Only */}
+          <div className="hidden lg:block relative" ref={dropdownRef}>
             <Button
               variant="ghost"
               size="icon"
@@ -156,11 +156,11 @@ const Navigation = () => {
             )}
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button - Single hamburger for mobile */}
           <Button
             variant="ghost"
             size="icon"
-            className="lg:hidden ml-2"
+            className="lg:hidden"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -186,6 +186,7 @@ const Navigation = () => {
               </Link>
             ))}
             <div className="pt-4 border-t border-border space-y-2">
+              {/* Support and Contact Us buttons */}
               {rightLinks.slice(0, -1).map((link) => (
                 <Button
                   key={link.name}
@@ -207,6 +208,26 @@ const Navigation = () => {
               >
                 <Link to="/login">Login</Link>
               </Button>
+
+              {/* Bandhalab and Bandhadrive */}
+              <div className="pt-2 space-y-2">
+                {dropdownItems.map((item) => (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="flex items-center w-full p-3 text-sm text-foreground hover:bg-accent transition-colors duration-200 rounded-md border border-border"
+                  >
+                    <item.icon className="h-5 w-5 mr-3 text-tech-blue" />
+                    <div className="flex flex-col items-start">
+                      <span className="font-medium">{item.name}</span>
+                      <span className="text-xs text-muted-foreground">{item.description}</span>
+                    </div>
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         </div>
