@@ -155,14 +155,51 @@ const Navigation = () => {
         </div>
 
         {/* Mobile Menu Button */}
-        <Button
-          variant="ghost"
-          size="icon"
-          className="lg:hidden"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </Button>
+        <div className="lg:hidden flex items-center space-x-2">
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </Button>
+
+          {/* Mobile Hamburger Menu for Bandhalab & Bandhadrive */}
+          <div className="relative" ref={dropdownRef}>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+              className="hover:bg-accent"
+            >
+              {isDropdownOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </Button>
+
+            {/* Mobile Dropdown Content */}
+            {isDropdownOpen && (
+              <div className="absolute right-0 mt-2 w-56 bg-background/95 backdrop-blur-md rounded-lg shadow-lg border border-border animate-in slide-in-from-top-2 duration-200">
+                <div className="py-2">
+                  {dropdownItems.map((item) => (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setIsDropdownOpen(false)}
+                      className="flex items-center px-4 py-3 text-sm text-foreground hover:bg-accent transition-colors duration-200"
+                    >
+                      <item.icon className="h-5 w-5 mr-3 text-tech-blue" />
+                      <div className="flex flex-col">
+                        <span className="font-medium">{item.name}</span>
+                        <span className="text-xs text-muted-foreground">{item.description}</span>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
       </div>
 
       {/* Mobile Menu */}
@@ -204,26 +241,6 @@ const Navigation = () => {
               >
                 <Link to="/login">Login</Link>
               </Button>
-
-              {/* Bandhalab and Bandhadrive */}
-              <div className="pt-2 space-y-2">
-                {dropdownItems.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="flex items-center w-full p-3 text-sm text-foreground hover:bg-accent transition-colors duration-200 rounded-md border border-border"
-                  >
-                    <item.icon className="h-5 w-5 mr-3 text-tech-blue" />
-                    <div className="flex flex-col items-start">
-                      <span className="font-medium">{item.name}</span>
-                      <span className="text-xs text-muted-foreground">{item.description}</span>
-                    </div>
-                  </a>
-                ))}
-              </div>
             </div>
           </div>
         </div>
