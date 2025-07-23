@@ -15,10 +15,15 @@ const HeroSection = () => {
           className="w-full h-full object-cover"
         >
           <source
-            src="https://player.vimeo.com/external/373977109.hd.mp4?s=66c05c7d3d61d9f4b4b1e5d5e5d4f9e8"
+            src="https://videos.pexels.com/video-files/3129671/3129671-uhd_3840_2160_25fps.mp4"
             type="video/mp4"
           />
-          Your browser does not support the video tag.
+          <source
+            src="https://videos.pexels.com/video-files/2278095/2278095-uhd_2560_1440_30fps.mp4"
+            type="video/mp4"
+          />
+          {/* Fallback image if video doesn't load */}
+          <div className="w-full h-full bg-gradient-to-br from-gray-900 via-gray-800 to-black"></div>
         </video>
         {/* Video Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent"></div>
