@@ -2,6 +2,7 @@ import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ExternalLink } from 'lucide-react';
+import { Link } from "react-router-dom";
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 
@@ -221,13 +222,24 @@ const Support = () => {
             support the next generation of engineering talent.
           </p>
           <div className="space-y-4">
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary">
-              Partnership Opportunities
-            </Button>
+            <Link to="/contact">
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-white text-white hover:bg-white hover:text-primary"
+              >
+                Partnership Opportunities
+              </Button>
+            </Link>
             <p className="text-white/80">
-              Contact us at <a href="mailto:bandhayudha.undip@gmail.com" className="underline hover:text-white">
+              Contact us at{" "}
+              <a
+                href="mailto:bandhayudha.undip@gmail.com"
+                className="underline hover:text-white"
+              >
                 bandhayudha.undip@gmail.com
-              </a> to discuss sponsorship opportunities
+              </a>{" "}
+              to discuss sponsorship opportunities
             </p>
           </div>
         </div>
