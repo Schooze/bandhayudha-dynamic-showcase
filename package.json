@@ -3,6 +3,10 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "overrides": {
+    "@swc/core": "1.4.5",
+    "@swc/wasm": "1.4.5"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -68,6 +72,7 @@
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react-swc": "^3.5.0",
+    "@vitejs/plugin-react": "^4.0.0",
     "autoprefixer": "^10.4.20",
     "eslint": "^9.9.0",
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
