@@ -15,12 +15,8 @@ const HeroSection = () => {
           className="w-full h-full object-cover"
         >
           <source
-            src="https://videos.pexels.com/video-files/3129671/3129671-uhd_3840_2160_25fps.mp4"
-            type="video/mp4"
-          />
-          <source
-            src="https://videos.pexels.com/video-files/2278095/2278095-uhd_2560_1440_30fps.mp4"
-            type="video/mp4"
+            src="/videos/hero-video.webm"
+            type="video/webm"
           />
           {/* Fallback image if video doesn't load */}
           <div className="w-full h-full bg-gradient-to-br from-gray-900 via-gray-800 to-black"></div>
