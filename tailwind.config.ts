@@ -61,7 +61,28 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// Custom robotics colors
+				'tech-blue': {
+					DEFAULT: 'hsl(var(--tech-blue))',
+					dark: 'hsl(var(--tech-blue-dark))'
+				},
+				'robot-orange': 'hsl(var(--robot-orange))',
+				'success-green': 'hsl(var(--success-green))'
+			},
+			backgroundImage: {
+				'gradient-hero': 'var(--gradient-hero)',
+				'gradient-card': 'var(--gradient-card)'
+			},
+			boxShadow: {
+				'elevation-low': 'var(--shadow-elevation-low)',
+				'elevation-medium': 'var(--shadow-elevation-medium)',
+				'elevation-high': 'var(--shadow-elevation-high)'
+			},
+			transitionProperty: {
+				'fast': 'var(--transition-fast)',
+				'smooth': 'var(--transition-smooth)',
+				'slow': 'var(--transition-slow)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
