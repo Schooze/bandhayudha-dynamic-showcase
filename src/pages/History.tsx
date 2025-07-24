@@ -11,35 +11,51 @@ const History = () => {
       title: 'Team Formation',
       description: 'Bandhayudha was established as the official ABU Robocon team of Diponegoro University. Our journey began with a vision to reach the national stage of robotics excellence.',
       icon: <Users className="h-6 w-6" />,
-      photo: null // Tidak ada foto untuk tahun 2009
+      media: null // Tidak ada foto/video untuk tahun 2009
     },
     {
       year: '2021',
       title: 'University Recognition',
       description: 'We developed our first arrow shooting robot, showcasing our commitment to technical innovation and competitive spirit.',
       icon: <Lightbulb className="h-6 w-6" />,
-      photo: '/images/2021-arrow-robot.jpg' // Contoh path foto
+      media: {
+        type: 'video',
+        src: '/videos/ABURobcon2021_Robot.webm',
+        alt: 'Arrow shooting robot development'
+      }
     },
     {
       year: '2023',
       title: 'First Victory',
       description: 'We achieved our first national success — securing 3rd Place and the Best Design Award at the ABU Robocon Indonesia competition.',
       icon: <Award className="h-6 w-6" />,
-      photo: '/images/2023-victory.jpg' // Contoh path foto
+      media: {
+        type: 'video',
+        src: '/videos/2023-victory.webm',
+        alt: 'Victory celebration and award ceremony'
+      }
     },
     {
       year: '2024',
       title: 'Full Autonomy & Sponsorship',
       description: 'We successfully developed our first fully autonomous robot system, capable of navigating and executing tasks without manual intervention. This year also marked our first official sponsorship — a turning point in our journey toward becoming a competitive and sustainable robotics team.',
       icon: <Lightbulb className="h-6 w-6" />,
-      photo: '/bandhayudha-photo/2025-Juara3R.jpeg' // Contoh path foto
+      media: {
+        type: 'image',
+        src: '/bandhayudha-photo/2024_Juara3R.jpg',
+        alt: '2024 ABU Robocon Indonesia Regional 3rd Place'
+      }
     },
     {
       year: '2025',
       title: 'Global Support',
       description: 'Bandhayudha secured its first international sponsor, marking a milestone in our journey toward global collaboration and innovation.',
       icon: <Globe className="h-6 w-6" />,
-      photo: '/images/2025-international-sponsor.jpg' // Contoh path foto
+      media: {
+        type: 'image',
+        src: '/images/2025-international-sponsor.jpg',
+        alt: 'International sponsorship announcement'
+      }
     }
   ];
 
@@ -113,18 +129,35 @@ const History = () => {
                           <h3 className="text-xl font-bold text-foreground mb-3">{item.title}</h3>
                           <p className="text-muted-foreground leading-relaxed mb-4">{item.description}</p>
                           
-                          {/* Photo Section - hanya tampil jika ada foto */}
-                          {item.photo && (
+                          {/* Media Section - foto atau video */}
+                          {item.media && (
                             <div className="mt-4">
-                              <img 
-                                src={item.photo} 
-                                alt={`${item.title} - ${item.year}`}
-                                className="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
-                                onError={(e) => {
-                                  // Jika foto gagal dimuat, sembunyikan elemen img
-                                  e.target.style.display = 'none';
-                                }}
-                              />
+                              {item.media.type === 'image' ? (
+                                <img 
+                                  src={item.media.src} 
+                                  alt={item.media.alt}
+                                  className="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+                                  onError={(e) => {
+                                    // Jika foto gagal dimuat, sembunyikan elemen
+                                    e.target.style.display = 'none';
+                                  }}
+                                />
+                              ) : item.media.type === 'video' ? (
+                                <video 
+                                  className="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+                                  controls
+                                  preload="metadata"
+                                  onError={(e) => {
+                                    // Jika video gagal dimuat, sembunyikan elemen
+                                    e.target.style.display = 'none';
+                                  }}
+                                >
+                                  <source src={item.media.src} type="video/webm" />
+                                  <p className="text-sm text-muted-foreground p-4">
+                                    Your browser does not support WebM video format.
+                                  </p>
+                                </video>
+                              ) : null}
                             </div>
                           )}
                         </CardContent>
