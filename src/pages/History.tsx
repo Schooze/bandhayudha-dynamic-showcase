@@ -9,40 +9,48 @@ const History = () => {
     {
       year: '2019',
       title: 'Team Formation',
-      description: 'Bandhayudha was established as the official ABU Robocon team representing Diponegoro University. Our journey began with a vision to compete at the highest levels of international robotics competition.',
+      description: 'Bandhayudha was established as the official ABU Robocon team of Diponegoro University. Our journey began with a vision to reach the national stage of robotics excellence.',
       icon: <Users className="h-6 w-6" />
     },
     {
       year: '2020',
       title: 'First Competition',
-      description: 'Despite the challenges of the pandemic, we participated in our first ABU Robocon competition, learning valuable lessons and establishing our foundation in competitive robotics.',
+      description: 'Despite the challenges of the pandemic, we participated in our first ABU Robocon national competition, gaining invaluable experience and laying the groundwork for future success.',
       icon: <Target className="h-6 w-6" />
     },
     {
       year: '2021',
       title: 'Technical Innovation',
-      description: 'We developed our first advanced autonomous robot systems, incorporating cutting-edge sensors and AI-driven navigation technologies that would become our signature approach.',
+      description: 'We developed our first advanced autonomous robot, integrating cutting-edge sensors and AI-based navigation — marking a turning point in our technical journey.',
       icon: <Lightbulb className="h-6 w-6" />
     },
     {
       year: '2022',
       title: 'National Recognition',
-      description: 'Achieved significant recognition in the Indonesian robotics community, establishing partnerships with industry leaders and expanding our technical capabilities.',
+      description: 'Bandhayudha gained recognition in the Indonesian robotics scene, building strong networks with universities and technology communities across the nation.',
       icon: <Trophy className="h-6 w-6" />
     },
     {
       year: '2023',
-      title: 'International Success',
-      description: 'Represented Indonesia in the ABU Robocon international competition, showcasing our advanced robotics systems and innovative engineering solutions on the world stage.',
-      icon: <Trophy className="h-6 w-6" />
+      title: 'First Victory',
+      description: 'We achieved our first national success — securing 3rd Place and the Best Design Award at the ABU Robocon Indonesia competition.',
+      icon: <Award className="h-6 w-6" />
     },
     {
       year: '2024',
-      title: 'Continued Excellence',
-      description: 'Building on our success, we continue to push the boundaries of robotics innovation, mentoring new team members and developing next-generation autonomous systems.',
+      title: 'Full Autonomy & Sponsorship',
+      description: 'We successfully developed our first fully autonomous robot system, capable of navigating and executing tasks without manual intervention. This year also marked our first official sponsorship — a turning point in our journey toward becoming a competitive and sustainable robotics team.',
       icon: <Lightbulb className="h-6 w-6" />
+    },
+    {
+      year: '2025',
+      title: 'Global Support',
+      description: 'Bandhayudha secured its first international sponsor, marking a milestone in our journey toward global collaboration and innovation.',
+      icon: <Globe className="h-6 w-6" />
     }
   ];
+
+  };
 
   return (
     <div className="min-h-screen">
@@ -53,7 +61,8 @@ const History = () => {
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">Our History</h1>
           <p className="text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed">
-            From humble beginnings to international recognition - the Bandhayudha journey
+            From humble beginnings to national recognition <br /> 
+            - the Bandhayudha journey -
           </p>
         </div>
       </section>
@@ -71,10 +80,9 @@ const History = () => {
               competitive robotics through innovation, teamwork, and technical excellence.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              As representatives of one of Indonesia's leading universities, we carry the responsibility of showcasing 
-              Indonesian engineering talent on the international stage. Our participation in ABU Robocon competitions 
-              has not only brought recognition to our university but has also contributed to the growth of robotics 
-              education and research in Indonesia.
+              As a robotics team from one of Indonesia's top universities, we strive to elevate Indonesian engineering 
+              through our journey in ABU Robocon competitions. Though we have not yet reached the international stage, 
+              every step we take brings us closer—while inspiring progress in robotics education and innovation nationwide.
             </p>
           </div>
         </div>
