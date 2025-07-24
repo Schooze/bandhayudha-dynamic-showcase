@@ -110,47 +110,6 @@ const About = () => {
               </Card>
             ))}
           </div>
-
-          {/* DJUARA Acronym Explanation */}
-          <div className="mt-16 text-center">
-            <Card className="p-8 max-w-4xl mx-auto shadow-elevation-medium">
-              <CardContent className="p-0">
-                <h3 className="text-2xl font-bold text-foreground mb-6">
-                  What <span className="text-tech-blue">DJUARA</span> Means to Us
-                </h3>
-                <div className="grid md:grid-cols-2 gap-6 text-left">
-                  <div className="space-y-3">
-                    <div className="flex items-center">
-                      <span className="text-tech-blue font-bold text-xl w-8">D</span>
-                      <span className="font-semibold">iscipline</span>
-                    </div>
-                    <div className="flex items-center">
-                      <span className="text-tech-blue font-bold text-xl w-8">J</span>
-                      <span className="font-semibold">udgment</span>
-                    </div>
-                    <div className="flex items-center">
-                      <span className="text-tech-blue font-bold text-xl w-8">U</span>
-                      <span className="font-semibold">nity</span>
-                    </div>
-                  </div>
-                  <div className="space-y-3">
-                    <div className="flex items-center">
-                      <span className="text-tech-blue font-bold text-xl w-8">A</span>
-                      <span className="font-semibold">daptability</span>
-                    </div>
-                    <div className="flex items-center">
-                      <span className="text-tech-blue font-bold text-xl w-8">R</span>
-                      <span className="font-semibold">obotics Excellence</span>
-                    </div>
-                    <div className="flex items-center">
-                      <span className="text-tech-blue font-bold text-xl w-8">A</span>
-                      <span className="font-semibold">ccountability</span>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
         </div>
       </section>
 
