@@ -118,41 +118,21 @@ const Contact = () => {
             <div className="space-y-8">
               <Card className="shadow-elevation-medium">
                 <CardHeader>
-                  <CardTitle className="text-2xl font-bold">Contact Information</CardTitle>
+                  <CardTitle className="text-2xl font-bold">Follow Us</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-6">
-                  <div className="flex items-start space-x-4">
-                    <MapPin className="h-6 w-6 text-tech-blue mt-1" />
-                    <div>
-                      <h3 className="font-semibold text-foreground">Location</h3>
-                      <p className="text-muted-foreground">
-                        Student Center of Diponegoro University<br />
-                        Jl. Prof. Eko Budihardjo, Tembalang<br />
-                        Kec. Tembalang, Kota Semarang<br />
-                        Jawa Tengah 50275
-                      </p>
-                    </div>
+                  <div className="flex items-center space-x-4">
+                    <a href="https://github.com/BANDHAGIT" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors">
+                      <Github className="h-5 w-5" />
+                    </a>
+                    <a href="https://www.linkedin.com/company/undip-robotics-development-center/?originalSubdomain=id" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors">
+                      <Linkedin className="h-5 w-5" />
+                    </a>
+                    <a href="https://www.instagram.com/bandhayudha.undip/" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors">
+                      <Instagram className="h-5 w-5" />
+                    </a>
                   </div>
 
-                  <div className="flex items-start space-x-4">
-                    <Mail className="h-6 w-6 text-tech-blue mt-1" />
-                    <div>
-                      <h3 className="font-semibold text-foreground">Email</h3>
-                      <p className="text-muted-foreground">bandhayudha.undip@gmail.com</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start space-x-4">
-                    <Phone className="h-6 w-6 text-tech-blue mt-1" />
-                    <div>
-                      <h3 className="font-semibold text-foreground">Contact Numbers</h3>
-                      <div className="text-muted-foreground space-y-1">
-                        <p>085942167648 (Project Manager, Aufa Abdillah)</p>
-                        <p>0895811430123 (Managerial, Mega Adinda)</p>
-                        <p>082324104226 (Team Leader, Helmi Yusuf)</p>
-                      </div>
-                    </div>
-                  </div>
                 </CardContent>
               </Card>
 
