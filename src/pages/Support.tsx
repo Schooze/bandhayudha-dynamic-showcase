@@ -43,7 +43,7 @@ const Support = () => {
       category: 'Electronics Platform',
       description: 'Open hardware facilitator providing electronic modules, sensors, and prototyping platforms for rapid development.',
       logo: '/bandhayudha-photo/Seeed_studio_Logo.png',
-      backgroundImage: 'https://www.cnx-software.com/wp-content/uploads/2025/01/SeeedStudio-XIAO-Plus-Series.jpg', // Add your background image path
+      backgroundImage: 'https://www.seeedstudio.com/blog/wp-content/uploads/2025/02/1-102010590-seeed-studio-xiao-mg24.jpg', // Add your background image path
       website: 'https://seeedstudio.com',
       services: ['Sensor Modules', 'Development Boards', 'Grove System', 'Custom Manufacturing'],
       partnership: 'Hardware Sponsor'
