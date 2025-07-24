@@ -30,8 +30,8 @@ const History = () => {
       description: 'We achieved our first national success — securing 3rd Place and the Best Design Award at the ABU Robocon Indonesia competition.',
       icon: <Award className="h-6 w-6" />,
       media: {
-        type: 'video',
-        src: '/videos/2023-victory.webm',
+        type: 'image',
+        src: '/bandhayudha-photo/2023-victory.png',
         alt: 'Victory celebration and award ceremony'
       }
     },
@@ -42,7 +42,7 @@ const History = () => {
       icon: <Lightbulb className="h-6 w-6" />,
       media: {
         type: 'image',
-        src: '/bandhayudha-photo/2024_Juara3R.jpg',
+        src: '/bandhayudha-photo/2024-Juara3R.jpg',
         alt: '2024 ABU Robocon Indonesia Regional 3rd Place'
       }
     },
