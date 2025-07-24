@@ -2,9 +2,9 @@ import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ExternalLink } from 'lucide-react';
-import { Link } from "react-router-dom";
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
+// import { Link } from "react-router-dom";
+// import Navigation from '@/components/Navigation';
+// import Footer from '@/components/Footer';
 
 const Support = () => {
   const sponsors = [
@@ -13,6 +13,7 @@ const Support = () => {
       category: 'PCB Manufacturing',
       description: 'Leading PCB prototype and manufacturing service providing high-quality circuit boards for our robotics projects.',
       logo: '/bandhayudha-photo/JLCPcb_Logo.png',
+      backgroundImage: '/bandhayudha-photo/jlcpcb-background.jpg', // Add your background image path
       website: 'https://jlcpcb.com',
       services: ['PCB Prototyping', 'PCB Assembly', 'Component Sourcing', 'Quality Testing'],
       partnership: 'Official PCB Manufacturing Partner'
@@ -22,6 +23,7 @@ const Support = () => {
       category: '3D CAD Software',
       description: 'Industry-leading 3D CAD software enabling our team to design, simulate, and validate complex mechanical systems.',
       logo: '/bandhayudha-photo/SolidWorks_Logo.svg.png',
+      backgroundImage: '/bandhayudha-photo/solidworks-background.jpg', // Add your background image path
       website: 'https://solidworks.com',
       services: ['3D Modeling', 'Simulation', 'Design Validation', 'Collaboration Tools'],
       partnership: 'Education License Partner'
@@ -31,6 +33,7 @@ const Support = () => {
       category: 'PCB Design Software',
       description: 'Advanced PCB design software providing comprehensive tools for electronic system design and development.',
       logo: '/bandhayudha-photo/Altium_Logo_BLK.png',
+      backgroundImage: '/bandhayudha-photo/altium-background.jpg', // Add your background image path
       website: 'https://altium.com',
       services: ['PCB Design', 'Schematic Capture', 'Library Management', 'Design Rules Check'],
       partnership: 'Student License Sponsor'
@@ -40,6 +43,7 @@ const Support = () => {
       category: 'Electronics Platform',
       description: 'Open hardware facilitator providing electronic modules, sensors, and prototyping platforms for rapid development.',
       logo: '/bandhayudha-photo/Seeed_studio_Logo.png',
+      backgroundImage: '/bandhayudha-photo/seeed-background.jpg', // Add your background image path
       website: 'https://seeedstudio.com',
       services: ['Sensor Modules', 'Development Boards', 'Grove System', 'Custom Manufacturing'],
       partnership: 'Hardware Sponsor'
@@ -49,6 +53,7 @@ const Support = () => {
       category: 'Circuit Design',
       description: 'Web-based EDA tool for circuit design, simulation, and PCB layout with seamless integration to manufacturing.',
       logo: '/bandhayudha-photo/EasyEDA_logo.png',
+      backgroundImage: '/bandhayudha-photo/easyeda-background.jpg', // Add your background image path
       website: 'https://easyeda.com',
       services: ['Circuit Design', 'PCB Layout', 'Simulation', 'Component Library'],
       partnership: 'Pro Account Sponsor'
@@ -58,6 +63,7 @@ const Support = () => {
       category: 'Sensor Technology',
       description: 'World-leading manufacturer of intelligent sensors and sensor solutions for industrial automation and robotics.',
       logo: '/bandhayudha-photo/SICK_Logo.png',
+      backgroundImage: '/bandhayudha-photo/sick-background.jpg', // Add your background image path
       website: 'https://sick.com',
       services: ['LiDAR Sensors', 'Vision Systems', 'Safety Sensors', 'Encoder Systems'],
       partnership: 'Technology Partner'
@@ -67,6 +73,7 @@ const Support = () => {
       category: '3D Printing Materials',
       description: 'Premium 3D printing filaments and materials enabling high-quality prototyping and functional part production.',
       logo: '/bandhayudha-photo/Polymaker_Logo.png',
+      backgroundImage: '/bandhayudha-photo/polymaker-background.jpg', // Add your background image path
       website: 'https://polymaker.com',
       services: ['PLA Filaments', 'Engineering Materials', 'Support Materials', 'Custom Solutions'],
       partnership: 'Material Sponsor'
@@ -75,7 +82,7 @@ const Support = () => {
 
   return (
     <div className="min-h-screen">
-      <Navigation />
+      {/* <Navigation /> */}
       <div className="pt-16">
       {/* Hero Section */}
       <section className="py-20 bg-gradient-hero text-white">
@@ -112,50 +119,74 @@ const Support = () => {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
             {sponsors.map((sponsor, index) => (
-              <Card key={index} className="shadow-elevation-medium hover:shadow-elevation-high transition-all duration-300 hover:-translate-y-1">
-                <CardContent className="p-8">
-                  <div className="flex items-start justify-between mb-6">
-                    <div className="flex-1">
-                      <div className="h-12 mb-4">
+              <Card key={index} className="shadow-elevation-medium hover:shadow-elevation-high transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+                <CardContent className="p-0">
+                  {/* Header with Background Image and Logo */}
+                  <div 
+                    className="relative h-32 bg-cover bg-center bg-gray-200"
+                    style={{
+                      backgroundImage: `url(${sponsor.backgroundImage})`,
+                    }}
+                  >
+                    {/* Overlay for better logo visibility */}
+                    <div className="absolute inset-0 bg-black/20"></div>
+                    
+                    {/* Logo in center */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="bg-white/90 backdrop-blur-sm rounded-lg p-3 shadow-lg">
                         <img
                           src={sponsor.logo}
                           alt={sponsor.name}
-                          className="max-h-full max-w-full object-contain"
+                          className="h-12 w-auto max-w-[120px] object-contain"
                           onError={(e) => {
                             // Fallback if logo doesn't load
                             const target = e.currentTarget as HTMLImageElement;
-                            const nextElement = target.nextElementSibling as HTMLElement;
-                            target.style.display = 'none';
-                            if (nextElement) nextElement.style.display = 'block';
+                            const parent = target.parentElement;
+                            if (parent) {
+                              parent.innerHTML = `<div class="text-gray-800 font-bold text-sm px-2">${sponsor.name}</div>`;
+                            }
                           }}
                         />
-                        <div className="hidden bg-gradient-hero text-white px-4 py-2 rounded text-lg font-bold inline-block">
-                          {sponsor.name}
-                        </div>
                       </div>
-                      <p className="text-sm text-tech-blue font-semibold mb-2">{sponsor.category}</p>
-                      <h3 className="text-xl font-bold text-foreground mb-3">{sponsor.partnership}</h3>
                     </div>
-                    <Button size="sm" variant="outline" asChild>
-                      <a href={sponsor.website} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="h-4 w-4" />
-                      </a>
-                    </Button>
+
+                    {/* External link button */}
+                    <div className="absolute top-3 right-3">
+                      <Button size="sm" variant="outline" className="bg-white/90 hover:bg-white" asChild>
+                        <a href={sponsor.website} target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="h-4 w-4" />
+                        </a>
+                      </Button>
+                    </div>
                   </div>
 
-                  <p className="text-muted-foreground mb-6 leading-relaxed">
-                    {sponsor.description}
-                  </p>
+                  {/* Separator Line */}
+                  <div className="h-1 bg-gradient-to-r from-tech-blue to-blue-500"></div>
 
-                  <div>
-                    <h4 className="font-semibold text-foreground mb-3">Services & Support</h4>
-                    <div className="grid grid-cols-2 gap-2">
-                      {sponsor.services.map((service, serviceIndex) => (
-                        <div key={serviceIndex} className="flex items-center space-x-2">
-                          <div className="w-2 h-2 bg-tech-blue rounded-full"></div>
-                          <span className="text-sm text-muted-foreground">{service}</span>
-                        </div>
-                      ))}
+                  {/* Content Section */}
+                  <div className="p-6">
+                    {/* Category */}
+                    <p className="text-sm text-tech-blue font-semibold mb-2">{sponsor.category}</p>
+                    
+                    {/* Partnership Title */}
+                    <h3 className="text-xl font-bold text-foreground mb-4">{sponsor.partnership}</h3>
+
+                    {/* Description */}
+                    <p className="text-muted-foreground mb-6 leading-relaxed">
+                      {sponsor.description}
+                    </p>
+
+                    {/* Services */}
+                    <div>
+                      <h4 className="font-semibold text-foreground mb-3">Services & Support</h4>
+                      <div className="grid grid-cols-2 gap-2">
+                        {sponsor.services.map((service, serviceIndex) => (
+                          <div key={serviceIndex} className="flex items-center space-x-2">
+                            <div className="w-2 h-2 bg-tech-blue rounded-full"></div>
+                            <span className="text-sm text-muted-foreground">{service}</span>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </CardContent>
@@ -222,15 +253,13 @@ const Support = () => {
             support the next generation of engineering talent.
           </p>
           <div className="space-y-4">
-            <Link to="/contact">
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-primary"
+            <a href="/contact" className="inline-block">
+              <button
+                className="px-6 py-3 border border-white text-white hover:bg-white hover:text-blue-600 transition-colors duration-300 rounded"
               >
                 Partnership Opportunities
-              </Button>
-            </Link>
+              </button>
+            </a>
             <p className="text-white/80">
               Contact us at{" "}
               <a
@@ -245,7 +274,7 @@ const Support = () => {
         </div>
       </section>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
