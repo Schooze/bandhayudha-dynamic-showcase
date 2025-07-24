@@ -123,7 +123,7 @@ const Support = () => {
                 <CardContent className="p-0">
                   {/* Header with Background Image and Logo */}
                   <div 
-                    className="relative h-32 bg-cover bg-center bg-gray-200"
+                    className="relative h-40 bg-cover bg-center bg-gray-200"
                     style={{
                       backgroundImage: `url(${sponsor.backgroundImage})`,
                     }}
@@ -132,22 +132,20 @@ const Support = () => {
                     <div className="absolute inset-0 bg-black/20"></div>
                     
                     {/* Logo in center */}
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="bg-white/90 backdrop-blur-sm rounded-lg p-3 shadow-lg">
-                        <img
-                          src={sponsor.logo}
-                          alt={sponsor.name}
-                          className="h-12 w-auto max-w-[120px] object-contain"
-                          onError={(e) => {
-                            // Fallback if logo doesn't load
-                            const target = e.currentTarget as HTMLImageElement;
-                            const parent = target.parentElement;
-                            if (parent) {
-                              parent.innerHTML = `<div class="text-gray-800 font-bold text-sm px-2">${sponsor.name}</div>`;
-                            }
-                          }}
-                        />
-                      </div>
+                    <div className="absolute inset-0 flex items-center justify-center p-4">
+                      <img
+                        src={sponsor.logo}
+                        alt={sponsor.name}
+                        className="h-16 w-auto max-w-[200px] object-contain filter drop-shadow-lg"
+                        onError={(e) => {
+                          // Fallback if logo doesn't load
+                          const target = e.currentTarget as HTMLImageElement;
+                          const parent = target.parentElement;
+                          if (parent) {
+                            parent.innerHTML = `<div class="text-white font-bold text-xl px-4 py-2 bg-black/50 rounded">${sponsor.name}</div>`;
+                          }
+                        }}
+                      />
                     </div>
 
                     {/* External link button */}
