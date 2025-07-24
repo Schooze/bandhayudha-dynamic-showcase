@@ -22,7 +22,7 @@ const History = () => {
         type: 'video',
         src: '/videos/ABURobcon2021_Robot.webm',
         alt: 'Arrow shooting robot development',
-        scale: 0.5 // Scale 50% dari ukuran normal
+        scale: 0.8 // Scale 50% dari ukuran normal
       }
     },
     {
