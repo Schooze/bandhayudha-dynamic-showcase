@@ -12,7 +12,7 @@ const Support = () => {
       name: 'JLCPCB',
       category: 'PCB Manufacturing',
       description: 'Leading PCB prototype and manufacturing service providing high-quality circuit boards for our robotics projects.',
-      logo: 'https://jlcpcb.com/assets/images/nav_logo.png',
+      logo: '/bandhayudha-photo/JLCPcb_Logo.png',
       website: 'https://jlcpcb.com',
       services: ['PCB Prototyping', 'PCB Assembly', 'Component Sourcing', 'Quality Testing'],
       partnership: 'Official PCB Manufacturing Partner'
@@ -21,7 +21,7 @@ const Support = () => {
       name: 'SolidWorks',
       category: '3D CAD Software',
       description: 'Industry-leading 3D CAD software enabling our team to design, simulate, and validate complex mechanical systems.',
-      logo: 'https://www.solidworks.com/sites/default/files/2021-10/solidworks-logo-horizontal.png',
+      logo: '/bandhayudha-photo/SolidWorks_Logo.svg.png',
       website: 'https://solidworks.com',
       services: ['3D Modeling', 'Simulation', 'Design Validation', 'Collaboration Tools'],
       partnership: 'Education License Partner'
@@ -30,7 +30,7 @@ const Support = () => {
       name: 'Altium',
       category: 'PCB Design Software',
       description: 'Advanced PCB design software providing comprehensive tools for electronic system design and development.',
-      logo: 'https://www.altium.com/altium-designer/templates/images/altium-logo.png',
+      logo: '/bandhayudha-photo/Altium_Logo_BLK.png',
       website: 'https://altium.com',
       services: ['PCB Design', 'Schematic Capture', 'Library Management', 'Design Rules Check'],
       partnership: 'Student License Sponsor'
@@ -39,7 +39,7 @@ const Support = () => {
       name: 'Seeed Studio',
       category: 'Electronics Platform',
       description: 'Open hardware facilitator providing electronic modules, sensors, and prototyping platforms for rapid development.',
-      logo: 'https://files.seeedstudio.com/wiki/IndexWiki/logo_2018_horizontal.png',
+      logo: '/bandhayudha-photo/Seeed_studio_Logo.png',
       website: 'https://seeedstudio.com',
       services: ['Sensor Modules', 'Development Boards', 'Grove System', 'Custom Manufacturing'],
       partnership: 'Hardware Sponsor'
@@ -48,7 +48,7 @@ const Support = () => {
       name: 'EasyEDA',
       category: 'Circuit Design',
       description: 'Web-based EDA tool for circuit design, simulation, and PCB layout with seamless integration to manufacturing.',
-      logo: 'https://easyeda.com/image/logo.png',
+      logo: '/bandhayudha-photo/EasyEDA_logo.png',
       website: 'https://easyeda.com',
       services: ['Circuit Design', 'PCB Layout', 'Simulation', 'Component Library'],
       partnership: 'Pro Account Sponsor'
@@ -57,7 +57,7 @@ const Support = () => {
       name: 'SICK Sensor Intelligence',
       category: 'Sensor Technology',
       description: 'World-leading manufacturer of intelligent sensors and sensor solutions for industrial automation and robotics.',
-      logo: 'https://www.sick.com/media/layout/logos/SICK_Logo_claim_rgb_2021.png',
+      logo: '/bandhayudha-photo/SICK_Logo.png',
       website: 'https://sick.com',
       services: ['LiDAR Sensors', 'Vision Systems', 'Safety Sensors', 'Encoder Systems'],
       partnership: 'Technology Partner'
@@ -66,7 +66,7 @@ const Support = () => {
       name: 'Polymaker',
       category: '3D Printing Materials',
       description: 'Premium 3D printing filaments and materials enabling high-quality prototyping and functional part production.',
-      logo: 'https://cdn.polymaker.com/wp-content/uploads/2020/08/polymaker-logo-black.png',
+      logo: '/bandhayudha-photo/Polymaker_Logo.png',
       website: 'https://polymaker.com',
       services: ['PLA Filaments', 'Engineering Materials', 'Support Materials', 'Custom Solutions'],
       partnership: 'Material Sponsor'
