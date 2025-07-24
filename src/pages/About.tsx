@@ -151,14 +151,13 @@ const About = () => {
           <p className="text-lg mb-8 max-w-2xl mx-auto">
             Be part of the next generation of robotics innovation. Contact us to learn more about our team and projects.
           </p>
-          <Link href="/contact" passHref>
+          <Link href="/contact">
             <Button
-              asChild
               size="lg"
               variant="outline"
               className="border-white !text-white hover:bg-white hover:text-primary transition-colors"
             >
-              <a>Contact Us Today</a>
+              Contact Us Today
             </Button>
           </Link>
         </div>
