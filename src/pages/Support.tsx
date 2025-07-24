@@ -131,7 +131,7 @@ const Support = () => {
                     }}
                   >
                     {/* Overlay for better logo visibility */}
-                    <div className="absolute inset-0 bg-black/35"></div>
+                    <div className="absolute inset-0 bg-black/45"></div>
                     
                     {/* Logo in center with size constraints */}
                     <div className="absolute inset-0 flex items-center justify-center p-8">
