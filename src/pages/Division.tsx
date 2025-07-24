@@ -29,12 +29,12 @@ const Division = () => {
         'Material Science'
       ],
       projects: [
+        'Jumping Robot Mechanism',
         'Omnidirectional Drive System',
-        'Precision Gripper Mechanism',
-        'Lightweight Frame Design',
-        'Custom Tool Systems'
+        'Dual BLDC Shooter Mechanism',
+        'Lightweight Frame Design'
       ],
-      memberCount: 8
+      memberCount: 10
     },
     {
       name: 'Electronics Division',
@@ -48,7 +48,7 @@ const Division = () => {
         'Sensor Integration',
         'Power System Design',
         'Motor Control',
-        'Communication Systems'
+        'Wiring & Assembly'
       ],
       skills: [
         'Altium Designer',
@@ -59,11 +59,11 @@ const Division = () => {
       ],
       projects: [
         'Main Control Board',
-        'Sensor Interface Modules',
+        'Power Distribution Board',
         'Motor Driver Systems',
         'Wireless Communication'
       ],
-      memberCount: 6
+      memberCount: 9
     },
     {
       name: 'Programming Division',
@@ -275,7 +275,7 @@ const Division = () => {
 
           <div className="grid md:grid-cols-4 gap-8 max-w-4xl mx-auto">
             <div className="text-center">
-              <div className="text-4xl font-bold text-tech-blue mb-2">25+</div>
+              <div className="text-4xl font-bold text-tech-blue mb-2">34</div>
               <p className="text-lg font-semibold text-foreground mb-1">Total Members</p>
               <p className="text-muted-foreground">Across all divisions</p>
             </div>
