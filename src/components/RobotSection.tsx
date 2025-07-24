@@ -50,6 +50,7 @@ const RobotSection = () => {
   const innovationHighlights = [
     {
       id: 1,
+      // Ambil icon dari lucide-react
       icon: Gauge,
       title: 'Swerve Drive',
       description: 'Enhanced maneuverability with 360-degree movement',

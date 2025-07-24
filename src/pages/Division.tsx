@@ -309,8 +309,8 @@ const Division = () => {
             opportunities for growth and innovation.
           </p>
           <p className="text-white/80">
-            Contact us at <a href="mailto:bandhayudha.undip@gmail.com" className="underline hover:text-white">
-              bandhayudha.undip@gmail.com
+            Find us at <a href="https://www.instagram.com/bandhayudha.undip/" className="underline hover:text-white">
+              bandhayudha.undip
             </a> to learn about current openings
           </p>
         </div>
