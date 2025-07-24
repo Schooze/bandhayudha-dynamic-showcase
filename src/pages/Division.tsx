@@ -51,7 +51,7 @@ const Division = () => {
         'Wiring & Assembly'
       ],
       skills: [
-        'Altium Designer',
+        'PCB Designer',
         'Circuit Analysis',
         'Embedded Systems',
         'Signal Processing',

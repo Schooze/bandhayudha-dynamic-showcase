@@ -7,28 +7,16 @@ import Footer from '@/components/Footer';
 const History = () => {
   const timeline = [
     {
-      year: '2019',
+      year: '2009',
       title: 'Team Formation',
       description: 'Bandhayudha was established as the official ABU Robocon team of Diponegoro University. Our journey began with a vision to reach the national stage of robotics excellence.',
       icon: <Users className="h-6 w-6" />
     },
     {
-      year: '2020',
-      title: 'First Competition',
-      description: 'Despite the challenges of the pandemic, we participated in our first ABU Robocon national competition, gaining invaluable experience and laying the groundwork for future success.',
-      icon: <Target className="h-6 w-6" />
-    },
-    {
       year: '2021',
-      title: 'Technical Innovation',
-      description: 'We developed our first advanced autonomous robot, integrating cutting-edge sensors and AI-based navigation — marking a turning point in our technical journey.',
+      title: 'University Recognition',
+      description: 'We developed our first arrow shooting robot, showcasing our commitment to technical innovation and competitive spirit.',
       icon: <Lightbulb className="h-6 w-6" />
-    },
-    {
-      year: '2022',
-      title: 'National Recognition',
-      description: 'Bandhayudha gained recognition in the Indonesian robotics scene, building strong networks with universities and technology communities across the nation.',
-      icon: <Trophy className="h-6 w-6" />
     },
     {
       year: '2023',
