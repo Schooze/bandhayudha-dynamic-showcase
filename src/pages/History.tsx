@@ -18,12 +18,13 @@ const History = () => {
       title: 'University Recognition',
       description: 'We developed our first arrow shooting robot, showcasing our commitment to technical innovation and competitive spirit.',
       icon: <Lightbulb className="h-6 w-6" />,
-      media: {
-        type: 'video',
-        src: '/videos/ABURobcon2021_Robot.webm',
-        alt: 'Arrow shooting robot development',
-        scale: 0.8 // Scale 50% dari ukuran normal
-      }
+      media: null // Tidak ada foto/video untuk tahun 2021
+      // media: {
+      //   type: 'video',
+      //   src: '/videos/ABURobcon2021_Robot.webm',
+      //   alt: 'Arrow shooting robot development',
+      //   scale: 0.8 // Scale 50% dari ukuran normal
+      // }
     },
     {
       year: '2023',
