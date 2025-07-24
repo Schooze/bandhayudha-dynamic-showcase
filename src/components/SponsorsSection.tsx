@@ -19,7 +19,7 @@ const SponsorsSection = () => {
     },
     {
       name: 'Seeed Studio',
-      logo: '/bandhayudha-photo/Seeed_Studio_Logo.png',
+      logo: '/bandhayudha-photo/Seeed_studio_Logo.png',
       description: 'Electronics Platform'
     },
     {
