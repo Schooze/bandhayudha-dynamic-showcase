@@ -23,7 +23,7 @@ const Support = () => {
       category: '3D CAD Software',
       description: 'Industry-leading 3D CAD software enabling our team to design, simulate, and validate complex mechanical systems.',
       logo: '/bandhayudha-photo/SolidWorks_Logo.svg.png',
-      backgroundImage: 'https://blog-assets.solidworks.com/uploads/sites/2/2020/10/05-scara-robot-in-solidworks.jpg', // Add your background image path
+      backgroundImage: '/bandhayudha-photo/solidworks-background.jpg', // Add your background image path
       website: 'https://solidworks.com',
       services: ['3D Modeling', 'Simulation', 'Design Validation', 'Collaboration Tools'],
       partnership: 'Education License Partner'
@@ -123,20 +123,20 @@ const Support = () => {
                 <CardContent className="p-0">
                   {/* Header with Background Image and Logo */}
                   <div 
-                    className="relative h-40 bg-cover bg-center bg-gray-200"
+                    className="relative h-48 bg-cover bg-center bg-gray-200"
                     style={{
                       backgroundImage: `url(${sponsor.backgroundImage})`,
                     }}
                   >
                     {/* Overlay for better logo visibility */}
-                    <div className="absolute inset-0 bg-black/20"></div>
+                    <div className="absolute inset-0 bg-black/30"></div>
                     
                     {/* Logo in center */}
-                    <div className="absolute inset-0 flex items-center justify-center p-4">
+                    <div className="absolute inset-0 flex items-center justify-center p-6">
                       <img
                         src={sponsor.logo}
                         alt={sponsor.name}
-                        className="h-16 w-auto max-w-[200px] object-contain filter drop-shadow-lg"
+                        className="h-20 w-auto max-w-[250px] object-contain filter drop-shadow-lg"
                         onError={(e) => {
                           // Fallback if logo doesn't load
                           const target = e.currentTarget as HTMLImageElement;
@@ -149,8 +149,8 @@ const Support = () => {
                     </div>
 
                     {/* External link button */}
-                    <div className="absolute top-3 right-3">
-                      <Button size="sm" variant="outline" className="bg-white/90 hover:bg-white" asChild>
+                    <div className="absolute top-4 right-4">
+                      <Button size="sm" variant="outline" className="bg-white/90 hover:bg-white border-white/50" asChild>
                         <a href={sponsor.website} target="_blank" rel="noopener noreferrer">
                           <ExternalLink className="h-4 w-4" />
                         </a>
@@ -158,8 +158,8 @@ const Support = () => {
                     </div>
                   </div>
 
-                  {/* Separator Line */}
-                  <div className="h-1 bg-gradient-to-r from-tech-blue to-blue-500"></div>
+                  {/* Separator Line - More Visible */}
+                  <div className="h-2 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 shadow-sm"></div>
 
                   {/* Content Section */}
                   <div className="p-6">
