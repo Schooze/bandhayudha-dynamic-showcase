@@ -24,7 +24,7 @@ const SponsorsSection = () => {
     },
     {
       name: 'EasyEda',
-      logo: '/bandhayudha-photo/EasyEDA_Logo.png',
+      logo: '/bandhayudha-photo/EasyEDA_logo.png',
       description: 'Circuit Design'
     },
     {
