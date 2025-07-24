@@ -14,7 +14,7 @@ const SponsorsSection = () => {
     },
     {
       name: 'Altium',
-      logo: 'https://www.altium.com/altium-designer/templates/images/altium-logo.png',
+      logo: '/bandhayudha-photo/Altium_Logo_BLK.png',
       description: 'PCB Design Software'
     },
     {

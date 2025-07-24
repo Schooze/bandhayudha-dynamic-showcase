@@ -10,7 +10,7 @@ const RobotSection = () => {
       id: 1,
       name: 'Autonomous Navigation Robot',
       category: 'Competition Robot',
-      image: '/lovable-uploads/75965119-720c-44cf-b446-0099b94bdef4.png',
+      image: '/bandhayudha-photo/75965119-720c-44cf-b446-0099b94bdef4.png',
       description: 'Advanced autonomous robot designed for ABU Robocon competition. Features intelligent navigation, object recognition, and precision manipulation capabilities for complex field challenges.',
       specs: [
         'LiDAR-based Navigation',
@@ -28,7 +28,7 @@ const RobotSection = () => {
       id: 2,
       name: 'Multi-Task Competition Robot',
       category: 'Competition Robot',
-      image: '/lovable-uploads/dc5ff86c-6bdc-47ae-92e3-7e9a69fa79cd.png',
+      image: '/bandhayudha-photo/dc5ff86c-6bdc-47ae-92e3-7e9a69fa79cd.png',
       description: 'Versatile robot platform capable of handling multiple competition tasks. Equipped with advanced sensor arrays and modular tool systems for diverse challenge requirements.',
       specs: [
         'Modular Tool System',

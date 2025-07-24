@@ -84,7 +84,7 @@ const Navigation = () => {
         {/* Logo */}
         <Link to="/" className="flex items-center space-x-2">
           <img
-            src="/lovable-uploads/c5164d44-7986-4c0e-9408-e2802edeb221.png"
+            src="/bandhayudha-photo/c5164d44-7986-4c0e-9408-e2802edeb221.png"
             alt="Bandhayudha"
             className="h-8 w-auto"
           />
