@@ -13,7 +13,7 @@ const Support = () => {
       category: 'PCB Manufacturing',
       description: 'Leading PCB prototype and manufacturing service providing high-quality circuit boards for our robotics projects.',
       logo: '/bandhayudha-photo/JLCPcb_Logo.png',
-      backgroundImage: '/bandhayudha-photo/jlcpcb-background.jpg', // Add your background image path
+      backgroundImage: 'https://jlcpcb.com/_nuxt/high_layer_2x.Bz9phkQ_.png', // Add your background image path
       website: 'https://jlcpcb.com',
       services: ['PCB Prototyping', 'PCB Assembly', 'Component Sourcing', 'Quality Testing'],
       partnership: 'Official PCB Manufacturing Partner'
@@ -33,7 +33,7 @@ const Support = () => {
       category: 'PCB Design Software',
       description: 'Advanced PCB design software providing comprehensive tools for electronic system design and development.',
       logo: '/bandhayudha-photo/Altium_Logo_BLK.png',
-      backgroundImage: '/bandhayudha-photo/altium-background.jpg', // Add your background image path
+      backgroundImage: 'https://www.develer.com/wp-content/uploads/2019/06/Corsi-Altium-Designer.jpeg', // Add your background image path
       website: 'https://altium.com',
       services: ['PCB Design', 'Schematic Capture', 'Library Management', 'Design Rules Check'],
       partnership: 'Student License Sponsor'
@@ -43,7 +43,7 @@ const Support = () => {
       category: 'Electronics Platform',
       description: 'Open hardware facilitator providing electronic modules, sensors, and prototyping platforms for rapid development.',
       logo: '/bandhayudha-photo/Seeed_studio_Logo.png',
-      backgroundImage: '/bandhayudha-photo/seeed-background.jpg', // Add your background image path
+      backgroundImage: 'https://www.cnx-software.com/wp-content/uploads/2025/01/SeeedStudio-XIAO-Plus-Series.jpg', // Add your background image path
       website: 'https://seeedstudio.com',
       services: ['Sensor Modules', 'Development Boards', 'Grove System', 'Custom Manufacturing'],
       partnership: 'Hardware Sponsor'
@@ -53,7 +53,7 @@ const Support = () => {
       category: 'Circuit Design',
       description: 'Web-based EDA tool for circuit design, simulation, and PCB layout with seamless integration to manufacturing.',
       logo: '/bandhayudha-photo/EasyEDA_logo.png',
-      backgroundImage: '/bandhayudha-photo/easyeda-background.jpg', // Add your background image path
+      backgroundImage: 'https://docs.easyeda.com/storage/images/en/PCB/PCB-View/PCB-View_20240624_110005.png', // Add your background image path
       website: 'https://easyeda.com',
       services: ['Circuit Design', 'PCB Layout', 'Simulation', 'Component Library'],
       partnership: 'Pro Account Sponsor'
@@ -63,7 +63,7 @@ const Support = () => {
       category: 'Sensor Technology',
       description: 'World-leading manufacturer of intelligent sensors and sensor solutions for industrial automation and robotics.',
       logo: '/bandhayudha-photo/SICK_Logo.png',
-      backgroundImage: '/bandhayudha-photo/sick-background.jpg', // Add your background image path
+      backgroundImage: 'https://cdn.sick.com/media/pim/9/79/179/IM0106179.png', // Add your background image path
       website: 'https://sick.com',
       services: ['LiDAR Sensors', 'Vision Systems', 'Safety Sensors', 'Encoder Systems'],
       partnership: 'Technology Partner'
@@ -73,7 +73,7 @@ const Support = () => {
       category: '3D Printing Materials',
       description: 'Premium 3D printing filaments and materials enabling high-quality prototyping and functional part production.',
       logo: '/bandhayudha-photo/Polymaker_Logo.png',
-      backgroundImage: '/bandhayudha-photo/polymaker-background.jpg', // Add your background image path
+      backgroundImage: 'https://polymaker.com/wp-content/uploads/6f8a5b75-84ec-48c9-885d-de76f9b7ae4e.jpeg', // Add your background image path
       website: 'https://polymaker.com',
       services: ['PLA Filaments', 'Engineering Materials', 'Support Materials', 'Custom Solutions'],
       partnership: 'Material Sponsor'
