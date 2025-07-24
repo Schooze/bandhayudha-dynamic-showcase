@@ -22,13 +22,13 @@ const HeroSection = () => {
       {/* Hero Content */}
       <div className="relative z-10 px-6 md:px-16 max-w-4xl">
         <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight text-left">
-          From Campus Lab to Championship Podium.
+          From Campus Lab to Podium.
         </h1>
         <h2 className="text-2xl md:text-4xl text-white font-medium mb-4 text-left">
           Bandhayudha ABURobocon
         </h2>
         <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl text-left">
-          Crafting every gear, circuit, and program toward a single championship ambition.
+          Crafting every gear, circuit, and algorithms toward a single championship ambition.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4">
@@ -48,13 +48,6 @@ const HeroSection = () => {
             <Play className="mr-2 h-5 w-5" />
             Watch Demo
           </Button>
-        </div>
-      </div>
-
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
-        <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-white/50 rounded-full mt-2 animate-bounce"></div>
         </div>
       </div>
     </section>
