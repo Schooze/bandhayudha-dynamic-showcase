@@ -11,7 +11,8 @@ const RobotSection = () => {
       name: 'Autonomous Navigation Robot',
       category: 'Competition Robot',
       image: '/bandhayudha-photo/75965119-720c-44cf-b446-0099b94bdef4.png',
-      posistion: 'center 100%',
+      scale: 'scale-110',
+      y_position: '6',
       description: 'Advanced autonomous robot designed for ABU Robocon competition. Features intelligent navigation, object recognition, and precision manipulation capabilities for complex field challenges.',
       specs: [
         'LiDAR-based Navigation',
@@ -30,7 +31,8 @@ const RobotSection = () => {
       name: 'Multi-Task Competition Robot',
       category: 'Competition Robot',
       image: '/bandhayudha-photo/dc5ff86c-6bdc-47ae-92e3-7e9a69fa79cd.png',
-      posistion: 'center 100%', //Dari tengah, kebawah 92%
+      scale: 'scale-110',
+      y_position: '6',
       description: 'Versatile robot platform capable of handling multiple competition tasks. Equipped with advanced sensor arrays and modular tool systems for diverse challenge requirements.',
       specs: [
         'Modular Tool System',
@@ -67,8 +69,7 @@ const RobotSection = () => {
                   <img
                     src={robot.image}
                     alt={robot.name}
-                    className="w-full h-96 object-cover"
-                    style={{ objectPosition: robot.position }}
+                    className={`object-cover h-full w-full transform ${robot.scale} translate-y-${robot.y_position}`}
                   />
                   {/* Badge positioned absolute */}
                   <Badge className="absolute top-4 left-4 bg-tech-blue text-white z-10">
