@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { ArrowRight, Cpu, Zap, Target } from 'lucide-react';
+import { ArrowRight, Cpu, Zap, Target, X } from 'lucide-react';
 
 const RobotSection = () => {
+  const [zoomedRobot, setZoomedRobot] = useState(null);
+
   const robots = [
     {
       id: 1,
@@ -65,18 +67,25 @@ const RobotSection = () => {
             <div key={robot.id} className={`grid lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
               {/* Robot Image */}
               <div className={`${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
-                <div className="relative group overflow-hidden rounded-2xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+                <div className="relative group overflow-hidden rounded-2xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 cursor-pointer"
+                     onClick={() => setZoomedRobot(robot)}>
                   <img
                     src={robot.image}
                     alt={robot.name}
-                    className={`object-cover h-full w-full transform ${robot.scale} translate-y-${robot.y_position}`}
+                    className={`object-cover h-full w-full transform ${robot.scale} translate-y-${robot.y_position} transition-transform duration-300 group-hover:scale-105`}
                   />
                   {/* Badge positioned absolute */}
                   <Badge className="absolute top-4 left-4 bg-tech-blue text-white z-10">
                     {robot.category}
                   </Badge>
-                  {/* Optional: Subtle overlay on hover for better badge visibility */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                  {/* Zoom indicator */}
+                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <div className="bg-white/20 backdrop-blur-sm rounded-full p-3">
+                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                      </svg>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -135,6 +144,45 @@ const RobotSection = () => {
             </div>
           ))}
         </div>
+
+        {/* Zoom Modal */}
+        {zoomedRobot && (
+          <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+               onClick={() => setZoomedRobot(null)}>
+            <div className="relative max-w-5xl max-h-[90vh] w-full">
+              {/* Close button */}
+              <button
+                onClick={() => setZoomedRobot(null)}
+                className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors z-10"
+              >
+                <X className="w-8 h-8" />
+              </button>
+              
+              {/* Zoomed image */}
+              <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+                <img
+                  src={zoomedRobot.image}
+                  alt={zoomedRobot.name}
+                  className="w-full h-auto max-h-[85vh] object-contain"
+                  onClick={(e) => e.stopPropagation()}
+                />
+                
+                {/* Robot info overlay */}
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                  <Badge className="bg-tech-blue text-white mb-2">
+                    {zoomedRobot.category}
+                  </Badge>
+                  <h3 className="text-2xl font-bold text-white mb-2">
+                    {zoomedRobot.name}
+                  </h3>
+                  <p className="text-white/80">
+                    {zoomedRobot.description}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Innovation Highlights */}
         <div className="mt-20 text-center">
