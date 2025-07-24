@@ -125,7 +125,7 @@ const Division = () => {
         'Team Documentation',
         'Public Relations'
       ],
-      memberCount: 4
+      memberCount: 6
     }
   ];
 

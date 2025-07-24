@@ -10,31 +10,36 @@ const History = () => {
       year: '2009',
       title: 'Team Formation',
       description: 'Bandhayudha was established as the official ABU Robocon team of Diponegoro University. Our journey began with a vision to reach the national stage of robotics excellence.',
-      icon: <Users className="h-6 w-6" />
+      icon: <Users className="h-6 w-6" />,
+      photo: null // Tidak ada foto untuk tahun 2009
     },
     {
       year: '2021',
       title: 'University Recognition',
       description: 'We developed our first arrow shooting robot, showcasing our commitment to technical innovation and competitive spirit.',
-      icon: <Lightbulb className="h-6 w-6" />
+      icon: <Lightbulb className="h-6 w-6" />,
+      photo: '/images/2021-arrow-robot.jpg' // Contoh path foto
     },
     {
       year: '2023',
       title: 'First Victory',
       description: 'We achieved our first national success — securing 3rd Place and the Best Design Award at the ABU Robocon Indonesia competition.',
-      icon: <Award className="h-6 w-6" />
+      icon: <Award className="h-6 w-6" />,
+      photo: '/images/2023-victory.jpg' // Contoh path foto
     },
     {
       year: '2024',
       title: 'Full Autonomy & Sponsorship',
       description: 'We successfully developed our first fully autonomous robot system, capable of navigating and executing tasks without manual intervention. This year also marked our first official sponsorship — a turning point in our journey toward becoming a competitive and sustainable robotics team.',
-      icon: <Lightbulb className="h-6 w-6" />
+      icon: <Lightbulb className="h-6 w-6" />,
+      photo: '/bandhayudha-photo/2025-Juara3R.jpeg' // Contoh path foto
     },
     {
       year: '2025',
       title: 'Global Support',
       description: 'Bandhayudha secured its first international sponsor, marking a milestone in our journey toward global collaboration and innovation.',
-      icon: <Globe className="h-6 w-6" />
+      icon: <Globe className="h-6 w-6" />,
+      photo: '/images/2025-international-sponsor.jpg' // Contoh path foto
     }
   ];
 
@@ -86,16 +91,16 @@ const History = () => {
             </p>
           </div>
 
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <div className="relative">
               {/* Timeline Line */}
               <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-border transform md:-translate-x-0.5"></div>
 
               {timeline.map((item, index) => (
                 <div key={index} className="relative mb-12 last:mb-0">
-                  <div className={`flex items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+                  <div className={`flex items-start ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
                     {/* Timeline Dot */}
-                    <div className="absolute left-4 md:left-1/2 w-3 h-3 bg-tech-blue rounded-full transform -translate-x-1/2 z-10"></div>
+                    <div className="absolute left-4 md:left-1/2 w-3 h-3 bg-tech-blue rounded-full transform -translate-x-1/2 z-10 mt-6"></div>
                     
                     {/* Content */}
                     <div className={`ml-12 md:ml-0 md:w-1/2 ${index % 2 === 0 ? 'md:pr-8' : 'md:pl-8'}`}>
@@ -106,7 +111,22 @@ const History = () => {
                             <div className="text-2xl font-bold text-tech-blue">{item.year}</div>
                           </div>
                           <h3 className="text-xl font-bold text-foreground mb-3">{item.title}</h3>
-                          <p className="text-muted-foreground leading-relaxed">{item.description}</p>
+                          <p className="text-muted-foreground leading-relaxed mb-4">{item.description}</p>
+                          
+                          {/* Photo Section - hanya tampil jika ada foto */}
+                          {item.photo && (
+                            <div className="mt-4">
+                              <img 
+                                src={item.photo} 
+                                alt={`${item.title} - ${item.year}`}
+                                className="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+                                onError={(e) => {
+                                  // Jika foto gagal dimuat, sembunyikan elemen img
+                                  e.target.style.display = 'none';
+                                }}
+                              />
+                            </div>
+                          )}
                         </CardContent>
                       </Card>
                     </div>
