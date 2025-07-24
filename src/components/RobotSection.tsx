@@ -10,26 +10,6 @@ const RobotSection = () => {
   const robots = [
     {
       id: 1,
-      name: 'Autonomous Navigation Robot',
-      category: 'Competition Robot',
-      image: '/bandhayudha-photo/75965119-720c-44cf-b446-0099b94bdef4.png',
-      scale: 'scale-110',
-      y_position: '6',
-      description: 'Advanced autonomous robot designed for ABU Robocon competition. Features intelligent navigation, object recognition, and precision manipulation capabilities for complex field challenges.',
-      specs: [
-        'LiDAR-based Navigation',
-        'Computer Vision',
-        'Omnidirectional Movement',
-        'Precision Gripper System'
-      ],
-      achievements: [
-        'National Championship Finalist',
-        'Best Design Award',
-        'Innovation Excellence'
-      ]
-    },
-    {
-      id: 2,
       name: 'Multi-Task Competition Robot',
       category: 'Competition Robot',
       image: '/bandhayudha-photo/dc5ff86c-6bdc-47ae-92e3-7e9a69fa79cd.png',
@@ -46,6 +26,26 @@ const RobotSection = () => {
         'Regional Champion',
         'Technical Excellence',
         'Team Spirit Award'
+      ]
+    },
+    {
+      id: 2,
+      name: 'Autonomous Navigation Robot',
+      category: 'Competition Robot',
+      image: '/bandhayudha-photo/75965119-720c-44cf-b446-0099b94bdef4.png',
+      scale: 'scale-110',
+      y_position: '6',
+      description: 'Advanced autonomous robot designed for ABU Robocon competition. Features intelligent navigation, object recognition, and precision manipulation capabilities for complex field challenges.',
+      specs: [
+        'LiDAR-based Navigation',
+        'Computer Vision',
+        'Omnidirectional Movement',
+        'Precision Gripper System'
+      ],
+      achievements: [
+        'National Championship Finalist',
+        'Best Design Award',
+        'Innovation Excellence'
       ]
     }
   ];
