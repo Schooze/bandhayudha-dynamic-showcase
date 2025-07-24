@@ -119,19 +119,19 @@ const Contact = () => {
             <div className="space-y-8">
               <Card className="shadow-elevation-medium">
                 <CardHeader>
-                  <CardTitle className="text-2xl font-bold">Follow Us</CardTitle>
+                  <CardTitle className="text-2xl font-bold text-center">Follow Us</CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-6">
-                  <div className="flex items-center space-x-4">
+                <CardContent>
+                  <div className="flex justify-center items-center space-x-6 text-tech-blue">
                     {/* GitHub */}
                     <a
                       href="https://github.com/BANDHAGIT"
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="GitHub"
-                      className="text-primary-foreground/60 hover:text-primary-foreground transition-colors"
+                      className="hover:opacity-80 transition"
                     >
-                      <Github className="h-5 w-5" />
+                      <Github className="h-6 w-6" />
                     </a>
 
                     {/* LinkedIn */}
@@ -140,9 +140,9 @@ const Contact = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="LinkedIn"
-                      className="text-primary-foreground/60 hover:text-primary-foreground transition-colors"
+                      className="hover:opacity-80 transition"
                     >
-                      <Linkedin className="h-5 w-5" />
+                      <Linkedin className="h-6 w-6" />
                     </a>
 
                     {/* Instagram */}
@@ -151,13 +151,14 @@ const Contact = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="Instagram"
-                      className="text-primary-foreground/60 hover:text-primary-foreground transition-colors"
+                      className="hover:opacity-80 transition"
                     >
-                      <Instagram className="h-5 w-5" />
+                      <Instagram className="h-6 w-6" />
                     </a>
                   </div>
                 </CardContent>
               </Card>
+
 
 
               <Card className="shadow-elevation-medium">
