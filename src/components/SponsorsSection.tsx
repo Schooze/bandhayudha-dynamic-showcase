@@ -4,7 +4,7 @@ const SponsorsSection = () => {
   const sponsors = [
     {
       name: 'JLCPcb',
-      logo: 'https://jlcpcb.com/assets/images/nav_logo.png',
+      logo: '/bandhayudha-photo/JLCPcb_Logo.png',
       description: 'PCB Manufacturing'
     },
     {
@@ -19,22 +19,22 @@ const SponsorsSection = () => {
     },
     {
       name: 'Seeed Studio',
-      logo: 'https://files.seeedstudio.com/wiki/IndexWiki/logo_2018_horizontal.png',
+      logo: '/bandhayudha-photo/Seeed_Studio_Logo.png',
       description: 'Electronics Platform'
     },
     {
       name: 'EasyEda',
-      logo: 'https://easyeda.com/image/logo.png',
+      logo: '/bandhayudha-photo/EasyEDA_Logo.png',
       description: 'Circuit Design'
     },
     {
       name: 'Sick Sensor Intelligence',
-      logo: 'https://www.sick.com/media/layout/logos/SICK_Logo_claim_rgb_2021.png',
+      logo: '/bandhayudha-photo/SICK_Logo.png',
       description: 'Sensor Technology'
     },
     {
       name: 'Polymaker',
-      logo: 'https://cdn.polymaker.com/wp-content/uploads/2020/08/polymaker-logo-black.png',
+      logo: '/bandhayudha-photo/Polymaker_Logo.png',
       description: '3D Printing Materials'
     }
   ];
