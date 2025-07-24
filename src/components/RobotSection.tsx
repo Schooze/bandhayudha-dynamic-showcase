@@ -65,7 +65,7 @@ const RobotSection = () => {
                   <img
                     src={robot.image}
                     alt={robot.name}
-                    className="w-full h-96 object-cover"
+                    className="w-full h-96 object-contain"
                   />
                   {/* Badge positioned absolute */}
                   <Badge className="absolute top-4 left-4 bg-tech-blue text-white z-10">
