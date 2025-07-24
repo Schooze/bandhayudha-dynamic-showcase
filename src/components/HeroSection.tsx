@@ -42,15 +42,22 @@ const HeroSection = () => {
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
 
-          <a
-            href="https://www.youtube.com/@bandhayudhaundip"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center border border-white text-white hover:bg-white hover:text-primary px-8 py-4 text-lg font-semibold transition-all duration-300 rounded-lg"
+          <Button
+            variant="outline"
+            size="lg"
+            asChild
+            className="border-white text-white hover:bg-white hover:text-primary bg-transparent px-8 py-4 text-lg font-semibold transition-all duration-300"
           >
-            <Play className="mr-2 h-5 w-5" />
-            Watch Demo
-          </a>
+            <a
+              href="https://www.youtube.com/@bandhayudhaundip"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center"
+            >
+              <Play className="mr-2 h-5 w-5" />
+              Watch Demo
+            </a>
+          </Button>
         </div>
       </div>
     </section>
