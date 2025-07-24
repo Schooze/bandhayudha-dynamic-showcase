@@ -26,7 +26,7 @@ const HeroSection = () => {
       </div>
 
       {/* Hero Content */}
-      <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
+      <div className="relative z-10 px-6 md:px-16 max-w-4xl">
         <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
           From Campus Lab to Championship Podium.
           <span className="block text-3xl md:text-5xl font-normal text-white mt-2">
