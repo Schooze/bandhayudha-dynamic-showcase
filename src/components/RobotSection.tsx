@@ -10,42 +10,38 @@ const RobotSection = () => {
   const robots = [
     {
       id: 1,
-      name: 'Multi-Task Competition Robot',
-      category: 'Competition Robot',
+      name: 'ULO',
+      category: 'ABURobocon 2024',
       image: '/bandhayudha-photo/dc5ff86c-6bdc-47ae-92e3-7e9a69fa79cd.png',
       scale: 'scale-110',
       y_position: '6',
-      description: 'Versatile robot platform capable of handling multiple competition tasks. Equipped with advanced sensor arrays and modular tool systems for diverse challenge requirements.',
+      description: 'ULO is a versatile autonomous robot designed for the ABU Robocon 2024 competition. It features a jetson orin nano for advanced Computer Vision, swerve drive train for enhanced maneuverability, and a robust navigation system that allows it to adapt to dynamic environments.',
       specs: [
-        'Modular Tool System',
-        'Multi-Sensor Integration',
-        'Adaptive Control',
-        'Real-time Processing'
+        'NVIDIA Jetson Orin Nano',
+        'STM32H7 for Control',
+        'Swerve Drive Train',
+        'Advanced Computer Vision',
       ],
       achievements: [
-        'Regional Champion',
-        'Technical Excellence',
-        'Team Spirit Award'
+        'Regional 3rd Place',
       ]
     },
     {
       id: 2,
-      name: 'Autonomous Navigation Robot',
-      category: 'Competition Robot',
+      name: 'NOGO',
+      category: 'ABURobocon 2024',
       image: '/bandhayudha-photo/75965119-720c-44cf-b446-0099b94bdef4.png',
       scale: 'scale-110',
       y_position: '6',
-      description: 'Advanced autonomous robot designed for ABU Robocon competition. Features intelligent navigation, object recognition, and precision manipulation capabilities for complex field challenges.',
+      description: 'NOGO is an advanced semi-autonomous robot designed for the ABU Robocon 2024 competition. It features intelligent navigation and precision manipulation capabilities for complex field challenges.',
       specs: [
-        'LiDAR-based Navigation',
-        'Computer Vision',
+        'STM32H7 for Control',
+        'Advance Navigation System',
         'Omnidirectional Movement',
         'Precision Gripper System'
       ],
       achievements: [
-        'National Championship Finalist',
-        'Best Design Award',
-        'Innovation Excellence'
+        'Regional 3rd Place',
       ]
     }
   ];
