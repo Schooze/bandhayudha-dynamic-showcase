@@ -44,7 +44,7 @@ const Footer = () => {
           <div className="lg:col-span-1">
             <div className="flex items-center space-x-2 mb-4">
               <img
-                src="/lovable-uploads/c5164d44-7986-4c0e-9408-e2802edeb221.png"
+                src="/bandhayudha-photo/c5164d44-7986-4c0e-9408-e2802edeb221.png"
                 alt="Bandhayudha"
                 className="h-8 w-auto filter invert"
               />
