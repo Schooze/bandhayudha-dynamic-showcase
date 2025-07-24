@@ -45,7 +45,7 @@ const History = () => {
       icon: <Lightbulb className="h-6 w-6" />,
       media: {
         type: 'image',
-        src: '/bandhayudha-photo/2024-Juara3R.jpg',
+        src: '/bandhayudha-photo/2024-Juara3R.jpeg',
         alt: '2024 ABU Robocon Indonesia Regional 3rd Place',
         scale: 0.9 // Scale 90% dari ukuran normal
       }
