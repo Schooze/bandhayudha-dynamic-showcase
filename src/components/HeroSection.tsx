@@ -28,14 +28,14 @@ const HeroSection = () => {
       {/* Hero Content */}
       <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
         <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-          Bandhayudha
-          <span className="block text-3xl md:text-5xl font-normal text-tech-blue mt-2">
-            Robotics Team
+          From Campus Lab to Championship Podium.
+          <span className="block text-3xl md:text-5xl font-normal text-white mt-2">
+            Bandhayudha ABURobocon
           </span>
         </h1>
         
         <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed">
-          Pushing the boundaries of robotics innovation with cutting-edge autonomous systems
+          Crafting every gear, circuit, and algorithm toward a single championship ambition.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
