@@ -64,7 +64,7 @@ const Members = () => {
     {
       name: 'Electronics Division',
       description: 'Circuit design, PCB development, and electronic systems',
-      memberCount: 6,
+      memberCount: 9,
       color: 'bg-tech-blue'
     },
     {
@@ -76,7 +76,7 @@ const Members = () => {
     {
       name: 'Management Division',
       description: 'Project coordination, documentation, and team operations',
-      memberCount: 4,
+      memberCount: 6,
       color: 'bg-accent'
     }
   ];
