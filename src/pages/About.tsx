@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';               // ← import Link
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Target, Users, Trophy, Lightbulb, Shield, Zap } from 'lucide-react';
@@ -150,9 +151,16 @@ const About = () => {
           <p className="text-lg mb-8 max-w-2xl mx-auto">
             Be part of the next generation of robotics innovation. Contact us to learn more about our team and projects.
           </p>
-          <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary">
-            Contact Us Today
-          </Button>
+          <Link href="/contact" passHref>
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="border-white !text-white hover:bg-white hover:text-primary transition-colors"
+            >
+              <a>Contact Us Today</a>
+            </Button>
+          </Link>
         </div>
       </section>
       </div>
