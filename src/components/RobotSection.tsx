@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { ArrowRight, Cpu, Zap, Target, X } from 'lucide-react';
+import { ArrowRight, Cpu, Zap, Target, X , Gauge, Network} from 'lucide-react';
 
 const RobotSection = () => {
   const [zoomedRobot, setZoomedRobot] = useState(null);
@@ -43,6 +43,34 @@ const RobotSection = () => {
       achievements: [
         'Regional 3rd Place',
       ]
+    }
+  ];
+
+  // Innovation Highlights Data
+  const innovationHighlights = [
+    {
+      id: 1,
+      icon: Gauge,
+      title: 'Swerve Drive',
+      description: 'Enhanced maneuverability with 360-degree movement',
+      bgColor: 'bg-tech-blue/10',
+      iconColor: 'text-tech-blue'
+    },
+    {
+      id: 2,
+      icon: Network,
+      title: 'Robust Communication',
+      description: 'Reliable data exchange with low latency',
+      bgColor: 'bg-robot-orange/10',
+      iconColor: 'text-robot-orange'
+    },
+    {
+      id: 3,
+      icon: Cpu,
+      title: 'Real-time Operation System',
+      description: 'Advanced real-time processing for complex tasks',
+      bgColor: 'bg-success-green/10',
+      iconColor: 'text-success-green'
     }
   ];
 
@@ -186,35 +214,20 @@ const RobotSection = () => {
             Innovation Highlights
           </h3>
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <Card className="p-6 shadow-elevation-medium hover:shadow-elevation-high transition-all duration-300">
-              <CardContent className="p-0 text-center">
-                <div className="bg-tech-blue/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Zap className="h-8 w-8 text-tech-blue" />
-                </div>
-                <h4 className="text-xl font-bold text-foreground mb-2">AI-Powered</h4>
-                <p className="text-muted-foreground">Advanced machine learning algorithms for autonomous decision making</p>
-              </CardContent>
-            </Card>
-
-            <Card className="p-6 shadow-elevation-medium hover:shadow-elevation-high transition-all duration-300">
-              <CardContent className="p-0 text-center">
-                <div className="bg-robot-orange/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Target className="h-8 w-8 text-robot-orange" />
-                </div>
-                <h4 className="text-xl font-bold text-foreground mb-2">Precision Control</h4>
-                <p className="text-muted-foreground">Sub-millimeter accuracy in manipulation and positioning tasks</p>
-              </CardContent>
-            </Card>
-
-            <Card className="p-6 shadow-elevation-medium hover:shadow-elevation-high transition-all duration-300">
-              <CardContent className="p-0 text-center">
-                <div className="bg-success-green/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Cpu className="h-8 w-8 text-success-green" />
-                </div>
-                <h4 className="text-xl font-bold text-foreground mb-2">Real-time Processing</h4>
-                <p className="text-muted-foreground">High-speed sensor data processing for instant response</p>
-              </CardContent>
-            </Card>
+            {innovationHighlights.map((highlight) => {
+              const IconComponent = highlight.icon;
+              return (
+                <Card key={highlight.id} className="p-6 shadow-elevation-medium hover:shadow-elevation-high transition-all duration-300">
+                  <CardContent className="p-0 text-center">
+                    <div className={`${highlight.bgColor} w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4`}>
+                      <IconComponent className={`h-8 w-8 ${highlight.iconColor}`} />
+                    </div>
+                    <h4 className="text-xl font-bold text-foreground mb-2">{highlight.title}</h4>
+                    <p className="text-muted-foreground">{highlight.description}</p>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </div>
