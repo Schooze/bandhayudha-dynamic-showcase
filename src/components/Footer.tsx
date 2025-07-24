@@ -46,7 +46,7 @@ const Footer = () => {
               <img
                 src="/bandhayudha-photo/logo bandha.png"
                 alt="Bandhayudha"
-                className="h-8 w-auto filter invert"
+                className="h-8 w-auto"
               />
             </div>
             <p className="text-primary-foreground/80 mb-6 leading-relaxed">
