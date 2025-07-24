@@ -113,12 +113,12 @@ const About = () => {
               <p className="text-muted-foreground">In competitive robotics</p>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-tech-blue mb-2">15+</div>
+              <div className="text-4xl font-bold text-tech-blue mb-2">10+</div>
               <p className="text-lg font-semibold text-foreground mb-1">Competitions</p>
-              <p className="text-muted-foreground">Participated worldwide</p>
+              <p className="text-muted-foreground">in national ABURobocon events</p>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-tech-blue mb-2">25+</div>
+              <div className="text-4xl font-bold text-tech-blue mb-2">30+</div>
               <p className="text-lg font-semibold text-foreground mb-1">Team Members</p>
               <p className="text-muted-foreground">Passionate engineers</p>
             </div>

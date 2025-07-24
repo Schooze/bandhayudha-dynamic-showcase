@@ -144,7 +144,7 @@ const Footer = () => {
         <div className="border-t border-primary-foreground/20 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-sm text-primary-foreground/60">
-              © 2024 Bandhayudha Robotics Team, Diponegoro University. All rights reserved.
+              © 2025 Bandhayudha Robotics Team, Diponegoro University. All rights reserved.
             </p>
             <div className="flex space-x-6 text-sm">
               <a href="#" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors">

@@ -87,7 +87,7 @@ const Navigation = () => {
             src="/bandhayudha-photo/logo bandha.png"
             alt="Bandhayudha"
             className={`h-8 w-auto transition-all duration-300 ${
-              isScrolled ? 'invert' : ''
+              location.pathname !== '/' || isScrolled ? 'invert' : ''
             }`}
           />
         </Link>
