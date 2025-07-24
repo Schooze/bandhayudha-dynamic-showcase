@@ -53,13 +53,13 @@ const Footer = () => {
               ABU Robocon team from Diponegoro University, pushing the boundaries of robotics innovation through cutting-edge autonomous systems.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors">
+              <a href="https://github.com/BANDHAGIT" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors">
                 <Github className="h-5 w-5" />
               </a>
-              <a href="#" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors">
+              <a href="https://www.linkedin.com/company/undip-robotics-development-center/?originalSubdomain=id" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors">
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a href="#" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors">
+              <a href="https://www.instagram.com/bandhayudha.undip/" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
             </div>
