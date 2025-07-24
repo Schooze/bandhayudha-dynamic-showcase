@@ -23,7 +23,7 @@ const Support = () => {
       category: '3D CAD Software',
       description: 'Industry-leading 3D CAD software enabling our team to design, simulate, and validate complex mechanical systems.',
       logo: '/bandhayudha-photo/SolidWorks_Logo.svg.png',
-      backgroundImage: '/bandhayudha-photo/solidworks-background.jpg', // Add your background image path
+      backgroundImage: 'https://www.solidworks.com/sites/default/filesd10/styles/webp/public/2025-01/Nemo2.jpg.webp?itok=MeFOakVP', // Add your background image path
       website: 'https://solidworks.com',
       services: ['3D Modeling', 'Simulation', 'Design Validation', 'Collaboration Tools'],
       partnership: 'Education License Partner'
