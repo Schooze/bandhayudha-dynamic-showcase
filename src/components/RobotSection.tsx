@@ -61,11 +61,11 @@ const RobotSection = () => {
             <div key={robot.id} className={`grid lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
               {/* Robot Image */}
               <div className={`${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
-                <div className="relative group overflow-hidden rounded-2xl">
+                <div className="relative group overflow-hidden rounded-2xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
                   <img
                     src={robot.image}
                     alt={robot.name}
-                    className="w-full h-96 object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="w-full h-96 object-cover"
                   />
                   {/* Badge positioned absolute */}
                   <Badge className="absolute top-4 left-4 bg-tech-blue text-white z-10">
