@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { Trophy, Users, Lightbulb, Target } from 'lucide-react';
+import { Users, Target, Lightbulb, Trophy, Award, Handshake, Globe } from 'lucide-react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 
