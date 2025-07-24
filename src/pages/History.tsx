@@ -21,7 +21,8 @@ const History = () => {
       media: {
         type: 'video',
         src: '/videos/ABURobcon2021_Robot.webm',
-        alt: 'Arrow shooting robot development'
+        alt: 'Arrow shooting robot development',
+        scale: 0.5 // Scale 50% dari ukuran normal
       }
     },
     {
@@ -32,7 +33,8 @@ const History = () => {
       media: {
         type: 'image',
         src: '/bandhayudha-photo/2023-victory.png',
-        alt: 'Victory celebration and award ceremony'
+        alt: 'Victory celebration and award ceremony',
+        scale: 1.0 // Scale 100% (ukuran normal)
       }
     },
     {
@@ -43,7 +45,8 @@ const History = () => {
       media: {
         type: 'image',
         src: '/bandhayudha-photo/2024-Juara3R.jpg',
-        alt: '2024 ABU Robocon Indonesia Regional 3rd Place'
+        alt: '2024 ABU Robocon Indonesia Regional 3rd Place',
+        scale: 0.9 // Scale 90% dari ukuran normal
       }
     },
     {
@@ -54,10 +57,22 @@ const History = () => {
       media: {
         type: 'image',
         src: '/images/2025-international-sponsor.jpg',
-        alt: 'International sponsorship announcement'
+        alt: 'International sponsorship announcement',
+        scale: 1.0 // Scale 100% (ukuran normal)
       }
     }
   ];
+
+  // Fungsi untuk menentukan ukuran media berdasarkan scale
+  const getMediaStyle = (scale = 1.0) => {
+    const baseHeight = 192; // h-48 = 192px
+    const scaledHeight = baseHeight * scale;
+    return {
+      height: `${scaledHeight}px`,
+      width: scale < 1.0 ? `${scale * 100}%` : '100%',
+      margin: scale < 1.0 ? '0 auto' : '0'
+    };
+  };
 
   return (
     <div className="min-h-screen">
@@ -129,14 +144,15 @@ const History = () => {
                           <h3 className="text-xl font-bold text-foreground mb-3">{item.title}</h3>
                           <p className="text-muted-foreground leading-relaxed mb-4">{item.description}</p>
                           
-                          {/* Media Section - foto atau video */}
+                          {/* Media Section - foto atau video dengan scale */}
                           {item.media && (
                             <div className="mt-4">
                               {item.media.type === 'image' ? (
                                 <img 
                                   src={item.media.src} 
                                   alt={item.media.alt}
-                                  className="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+                                  className="object-cover rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+                                  style={getMediaStyle(item.media.scale)}
                                   onError={(e) => {
                                     // Jika foto gagal dimuat, sembunyikan elemen
                                     e.target.style.display = 'none';
@@ -144,7 +160,8 @@ const History = () => {
                                 />
                               ) : item.media.type === 'video' ? (
                                 <video 
-                                  className="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+                                  className="object-cover rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+                                  style={getMediaStyle(item.media.scale)}
                                   controls
                                   preload="metadata"
                                   onError={(e) => {
