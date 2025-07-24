@@ -122,19 +122,42 @@ const Contact = () => {
                 </CardHeader>
                 <CardContent className="space-y-6">
                   <div className="flex items-center space-x-4">
-                    <a href="https://github.com/BANDHAGIT" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors">
+                    {/* GitHub */}
+                    <a
+                      href="https://github.com/BANDHAGIT"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="GitHub"
+                      className="text-primary-foreground/60 hover:text-primary-foreground transition-colors"
+                    >
                       <Github className="h-5 w-5" />
                     </a>
-                    <a href="https://www.linkedin.com/company/undip-robotics-development-center/?originalSubdomain=id" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors">
+
+                    {/* LinkedIn */}
+                    <a
+                      href="https://www.linkedin.com/company/undip-robotics-development-center/?originalSubdomain=id"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="LinkedIn"
+                      className="text-primary-foreground/60 hover:text-primary-foreground transition-colors"
+                    >
                       <Linkedin className="h-5 w-5" />
                     </a>
-                    <a href="https://www.instagram.com/bandhayudha.undip/" className="text-primary-foreground/60 hover:text-primary-foreground transition-colors">
+
+                    {/* Instagram */}
+                    <a
+                      href="https://www.instagram.com/bandhayudha.undip/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Instagram"
+                      className="text-primary-foreground/60 hover:text-primary-foreground transition-colors"
+                    >
                       <Instagram className="h-5 w-5" />
                     </a>
                   </div>
-
                 </CardContent>
               </Card>
+
 
               <Card className="shadow-elevation-medium">
                 <CardHeader>
