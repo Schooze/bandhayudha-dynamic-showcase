@@ -82,7 +82,7 @@ const Support = () => {
 
   return (
     <div className="min-h-screen">
-      {/* <Navigation /> */}
+      <Navigation />
       <div className="pt-16">
       {/* Hero Section */}
       <section className="py-20 bg-gradient-hero text-white">
@@ -280,7 +280,7 @@ const Support = () => {
         </div>
       </section>
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };
