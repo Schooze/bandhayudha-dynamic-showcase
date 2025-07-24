@@ -2,9 +2,9 @@ import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ExternalLink } from 'lucide-react';
-// import { Link } from "react-router-dom";
-// import Navigation from '@/components/Navigation';
-// import Footer from '@/components/Footer';
+import { Link } from "react-router-dom";
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 
 const Support = () => {
   const sponsors = [
