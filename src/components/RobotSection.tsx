@@ -61,16 +61,18 @@ const RobotSection = () => {
             <div key={robot.id} className={`grid lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
               {/* Robot Image */}
               <div className={`${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
-                <div className="relative group">
+                <div className="relative group overflow-hidden rounded-2xl">
                   <img
                     src={robot.image}
                     alt={robot.name}
-                    className="w-full h-96 object-cover rounded-2xl shadow-elevation-high group-hover:shadow-elevation-high transition-all duration-500 group-hover:scale-105"
+                    className="w-full h-96 object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
-                  <Badge className="absolute top-4 left-4 bg-tech-blue text-white">
+                  {/* Badge positioned absolute */}
+                  <Badge className="absolute top-4 left-4 bg-tech-blue text-white z-10">
                     {robot.category}
                   </Badge>
+                  {/* Optional: Subtle overlay on hover for better badge visibility */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
                 </div>
               </div>
 
