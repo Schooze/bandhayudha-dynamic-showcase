@@ -123,29 +123,37 @@ const Support = () => {
                 <CardContent className="p-0">
                   {/* Header with Background Image and Logo */}
                   <div 
-                    className="relative h-48 bg-cover bg-center bg-gray-200"
+                    className="relative h-48 bg-cover bg-center"
                     style={{
-                      backgroundImage: `url(${sponsor.backgroundImage})`,
+                      backgroundImage: sponsor.backgroundImage 
+                        ? `url(${sponsor.backgroundImage})` 
+                        : 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
                     }}
                   >
                     {/* Overlay for better logo visibility */}
                     <div className="absolute inset-0 bg-black/30"></div>
                     
-                    {/* Logo in center */}
-                    <div className="absolute inset-0 flex items-center justify-center p-6">
-                      <img
-                        src={sponsor.logo}
-                        alt={sponsor.name}
-                        className="h-20 w-auto max-w-[250px] object-contain filter drop-shadow-lg"
-                        onError={(e) => {
-                          // Fallback if logo doesn't load
-                          const target = e.currentTarget as HTMLImageElement;
-                          const parent = target.parentElement;
-                          if (parent) {
-                            parent.innerHTML = `<div class="text-white font-bold text-xl px-4 py-2 bg-black/50 rounded">${sponsor.name}</div>`;
-                          }
-                        }}
-                      />
+                    {/* Logo in center with size constraints */}
+                    <div className="absolute inset-0 flex items-center justify-center p-8">
+                      <div className="w-full h-full flex items-center justify-center">
+                        <img
+                          src={sponsor.logo}
+                          alt={sponsor.name}
+                          className="max-h-24 max-w-[80%] w-auto h-auto object-contain filter drop-shadow-lg"
+                          style={{
+                            maxHeight: '6rem', // 24 in Tailwind = 6rem
+                            maxWidth: '80%'
+                          }}
+                          onError={(e) => {
+                            // Fallback if logo doesn't load
+                            const target = e.currentTarget as HTMLImageElement;
+                            const parent = target.parentElement;
+                            if (parent) {
+                              parent.innerHTML = `<div class="text-white font-bold text-xl px-6 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg shadow-lg border-2 border-white/20">${sponsor.name}</div>`;
+                            }
+                          }}
+                        />
+                      </div>
                     </div>
 
                     {/* External link button */}
