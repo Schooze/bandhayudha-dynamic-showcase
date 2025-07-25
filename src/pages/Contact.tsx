@@ -13,7 +13,6 @@ import { useToast } from '@/hooks/use-toast';
 import emailjs from '@emailjs/browser';
 import { API_BASE_URL } from '../config';
 
-
 const Contact = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -49,9 +48,9 @@ const Contact = () => {
   const sendEmail = async () => {
     try {
       // EmailJS Configuration
-      const serviceId = 'service_hh1f9m3'; // Ganti dengan Service ID dari EmailJS
-      const templateId = 'template_95rnkcs'; // Ganti dengan Template ID dari EmailJS
-      const publicKey = '2g05sy4W4luomcVuz'; // Ganti dengan Public Key dari EmailJS
+      const serviceId = 'service_hh1f9m3';
+      const templateId = 'template_95rnkcs';
+      const publicKey = '2g05sy4W4luomcVuz';
 
       const templateParams = {
         to_email: 'bandhayudha.undip@gmail.com',
@@ -75,19 +74,38 @@ const Contact = () => {
 
   const sendToBackend = async () => {
     try {
+      console.log('Sending to backend:', API_BASE_URL);
+      
       const response = await fetch(`${API_BASE_URL}/api/contact`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json',
         },
+        credentials: 'include', // Untuk CORS dengan credentials
         body: JSON.stringify(formData)
       });
 
+      // Check if response is ok
+      if (!response.ok) {
+        const errorText = await response.text();
+        console.error('Backend response error:', response.status, errorText);
+        throw new Error(`Server error: ${response.status} - ${errorText}`);
+      }
+
       const data = await response.json();
       return data;
-    } catch (error) {
-      console.error('Backend error:', error);
-      throw error;
+    } catch (error: any) {
+      console.error('Backend error details:', error);
+      
+      // Check for different types of errors
+      if (error.name === 'TypeError' && error.message.includes('fetch')) {
+        throw new Error('Tidak dapat terhubung ke server. Periksa koneksi internet Anda.');
+      } else if (error.message.includes('CORS')) {
+        throw new Error('Masalah konfigurasi server. Silakan hubungi administrator.');
+      } else {
+        throw new Error(error.message || 'Gagal mengirim ke WhatsApp');
+      }
     }
   };
 
@@ -106,14 +124,52 @@ const Contact = () => {
         return;
       }
 
-      // Kirim ke backend (WhatsApp)
-      const backendResponse = await sendToBackend();
-      
-      // Kirim email menggunakan EmailJS
-      const emailSent = await sendEmail();
+      // Validasi email format
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(formData.email)) {
+        toast({
+          title: "Error",
+          description: "Format email tidak valid!",
+          variant: "destructive",
+        });
+        return;
+      }
 
-      if (backendResponse.success) {
-        // Reset form
+      // Menampilkan loading toast
+      const loadingToast = toast({
+        title: "Mengirim...",
+        description: "Mohon tunggu, pesan sedang dikirim.",
+      });
+
+      let backendSuccess = false;
+      let emailSuccess = false;
+
+      // Coba kirim ke backend terlebih dahulu
+      try {
+        const backendResponse = await sendToBackend();
+        if (backendResponse.success) {
+          backendSuccess = true;
+          console.log('Backend success:', backendResponse);
+        }
+      } catch (backendError: any) {
+        console.error('Backend failed:', backendError);
+        // Jangan langsung throw, coba email dulu
+      }
+
+      // Kirim email menggunakan EmailJS
+      try {
+        emailSuccess = await sendEmail();
+        console.log('Email success:', emailSuccess);
+      } catch (emailError) {
+        console.error('Email failed:', emailError);
+      }
+
+      // Dismiss loading toast
+      loadingToast.dismiss?.();
+
+      // Evaluasi hasil pengiriman
+      if (backendSuccess || emailSuccess) {
+        // Reset form jika ada yang berhasil
         setFormData({
           firstName: '',
           lastName: '',
@@ -125,19 +181,28 @@ const Contact = () => {
           message: ''
         });
 
-        // Show success toast
-        toast({
-          title: "Berhasil!",
-          description: `Pesan Anda berhasil dikirim${emailSent ? ' ke WhatsApp dan Email' : ' ke WhatsApp'}!`,
-          variant: "default",
-        });
-
-        // Reset form HTML
         if (formRef.current) {
           formRef.current.reset();
         }
+
+        // Success message berdasarkan apa yang berhasil
+        let successMessage = 'Pesan berhasil dikirim';
+        if (backendSuccess && emailSuccess) {
+          successMessage += ' ke WhatsApp dan Email!';
+        } else if (backendSuccess) {
+          successMessage += ' ke WhatsApp!';
+        } else if (emailSuccess) {
+          successMessage += ' ke Email!';
+        }
+
+        toast({
+          title: "Berhasil!",
+          description: successMessage,
+          variant: "default",
+        });
       } else {
-        throw new Error(backendResponse.message || 'Gagal mengirim pesan');
+        // Kedua metode gagal
+        throw new Error('Gagal mengirim pesan melalui WhatsApp dan Email. Silakan coba lagi atau hubungi kami langsung.');
       }
 
     } catch (error: any) {

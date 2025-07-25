@@ -6,21 +6,30 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Hanya izinkan origin frontend-mu
+// CORS Configuration - FIXED
 const corsOptions = {
-  origin: 'https://bandhayudha.icu',
+  origin: ['https://bandhayudha.icu', 'http://localhost:3000', 'http://localhost:5173'], // tambahkan localhost untuk development
   methods: ['GET', 'POST', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'Accept'],
   credentials: true,
-  optionsSuccessStatus: 204
+  optionsSuccessStatus: 200 // untuk browser lama
 };
 
-// Enable CORS untuk semua route dengan opsi di atas
+// Enable CORS SEBELUM middleware lain
 app.use(cors(corsOptions));
-// Enable preflight untuk semua route
-app.options('*', cors(corsOptions));
 
-app.use(express.json());
+// Middleware untuk parsing JSON
+app.use(express.json({ limit: '10mb' }));
+app.use(express.urlencoded({ extended: true, limit: '10mb' }));
+
+// Tambahan: Handle preflight requests secara eksplisit
+app.options('*', (req, res) => {
+  res.header('Access-Control-Allow-Origin', req.headers.origin || '*');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Accept');
+  res.header('Access-Control-Allow-Credentials', 'true');
+  res.status(200).send();
+});
 
 // UltraMsg Configuration
 const ULTRAMSG_INSTANCE_ID = process.env.ULTRAMSG_INSTANCE_ID || 'instance135111';
@@ -30,6 +39,10 @@ const ULTRAMSG_URL         = `https://api.ultramsg.com/${ULTRAMSG_INSTANCE_ID}/m
 // Route untuk mengirim pesan WhatsApp dan Email
 app.post('/api/contact', async (req, res) => {
   try {
+    // Set CORS headers secara manual juga (backup)
+    res.header('Access-Control-Allow-Origin', req.headers.origin || 'https://bandhayudha.icu');
+    res.header('Access-Control-Allow-Credentials', 'true');
+
     const {
       firstName,
       lastName,
@@ -77,7 +90,8 @@ Pesan otomatis dari website Bandhayudha UNDIP`;
       whatsappData,
       {
         headers: { 'Content-Type': 'application/json' },
-        params:  { token: ULTRAMSG_TOKEN }
+        params:  { token: ULTRAMSG_TOKEN },
+        timeout: 10000 // 10 detik timeout
       }
     );
 
@@ -95,6 +109,11 @@ Pesan otomatis dari website Bandhayudha UNDIP`;
 
   } catch (error) {
     console.error('Error sending message:', error.response?.data || error.message);
+    
+    // Set CORS headers bahkan untuk error response
+    res.header('Access-Control-Allow-Origin', req.headers.origin || 'https://bandhayudha.icu');
+    res.header('Access-Control-Allow-Credentials', 'true');
+    
     res.status(500).json({
       success: false,
       message: 'Gagal mengirim pesan',
@@ -105,9 +124,24 @@ Pesan otomatis dari website Bandhayudha UNDIP`;
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {
-  res.json({ status: 'Server is running' });
+  res.header('Access-Control-Allow-Origin', req.headers.origin || 'https://bandhayudha.icu');
+  res.json({ status: 'Server is running', timestamp: new Date().toISOString() });
+});
+
+// 404 handler
+app.use('*', (req, res) => {
+  res.header('Access-Control-Allow-Origin', req.headers.origin || 'https://bandhayudha.icu');
+  res.status(404).json({ message: 'Route not found' });
+});
+
+// Error handler
+app.use((err, req, res, next) => {
+  console.error('Server error:', err);
+  res.header('Access-Control-Allow-Origin', req.headers.origin || 'https://bandhayudha.icu');
+  res.status(500).json({ message: 'Internal server error' });
 });
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
+  console.log(`CORS enabled for: https://bandhayudha.icu`);
 });
