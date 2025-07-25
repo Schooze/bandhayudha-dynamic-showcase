@@ -258,11 +258,7 @@ const Members = () => {
               {index < years.length - 1 && (
                 <div className="w-0.5 h-8 bg-gray-300 mx-auto" />
               )}
-              
-              {/* Tooltip */}
-              <div className="absolute right-16 top-1/2 -translate-y-1/2 bg-gray-900 text-white px-3 py-1 rounded text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
-                {members.filter(m => m.joinYear === year).length} members
-              </div>
+
             </div>
           ))}
         </div>
