@@ -250,11 +250,11 @@ app.use((err, req, res, next) => {
 });
 
 // Start server
-const server = app.listen(PORT, () => {
+const server = app.listen(PORT, '127.0.0.1', () => {
   console.log(`
 🚀 Server running on port ${PORT}
 📍 Environment: ${process.env.NODE_ENV || 'development'}
-🔗 Listening on: http://localhost:${PORT}
+🔗 Listening on: http://127.0.0.1:${PORT}
 ✅ CORS enabled for: https://bandhayudha.icu
 🔔 UltraMsg Instance: ${ULTRAMSG_INSTANCE_ID}
   `);
