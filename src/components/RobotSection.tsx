@@ -8,6 +8,24 @@ const RobotSection = () => {
   const [zoomedRobot, setZoomedRobot] = useState(null);
 
   const robots = [
+    // {
+    //   id: 1,
+    //   name: '',
+    //   category: 'ABURobocon 2025',
+    //   image: '/bandhayudha-photo/Robot1_ABU25.JPG',
+    //   scale: 'scale-110',
+    //   y_position: '6',
+    //   description: 'ULO is a versatile autonomous robot designed for the ABU Robocon 2024 competition. It features a jetson orin nano for advanced Computer Vision, swerve drive train for enhanced maneuverability, and a robust navigation system that allows it to adapt to dynamic environments.',
+    //   specs: [
+    //     'NVIDIA Jetson Orin Nano',
+    //     'Robot Operating System (ROS)',
+    //     'Wifi and Bluetooth Communication',
+    //     '5GHz/2.4GHz Dual Band',
+    //   ],
+    //   achievements: [
+    //     'Regional 3rd Place',
+    //   ]
+    // },
     {
       id: 1,
       name: 'ULO',
