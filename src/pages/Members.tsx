@@ -22,8 +22,8 @@ const Members = () => {
       contact: {
         phone: '085942167648',
         email: 'aufa.abdillah@students.undip.ac.id',
-        linkedin: 'aufaabdillah',
-        github: 'aufaabdillah'
+        linkedin: 'https://linkedin.com/in/aufaabdillah',
+        github: 'https://github.com/aufaabdillah'
       }
     },
     {
@@ -39,7 +39,7 @@ const Members = () => {
       contact: {
         phone: '0895811430123',
         email: 'mega.adinda@students.undip.ac.id',
-        linkedin: 'megaadinda',
+        linkedin: 'https://linkedin.com/in/megaadinda',
         github: null
       }
     },
@@ -57,7 +57,7 @@ const Members = () => {
         phone: '082324104226',
         email: 'helmi.yusuf@students.undip.ac.id',
         linkedin: null,
-        github: 'helmiyusuf'
+        github: 'https://github.com/helmiyusuf'
       }
     },
     // 2024 Members
@@ -74,8 +74,8 @@ const Members = () => {
       contact: {
         phone: '081234567890',
         email: 'sarah.wijaya@students.undip.ac.id',
-        linkedin: 'sarahwijaya',
-        github: 'sarahw'
+        linkedin: 'https://linkedin.com/in/sarahwijaya',
+        github: 'https://github.com/sarahw'
       }
     },
     {
@@ -108,8 +108,8 @@ const Members = () => {
       contact: {
         phone: '083456789012',
         email: 'lisa.chen@students.undip.ac.id',
-        linkedin: 'lisachen',
-        github: 'lisac'
+        linkedin: 'https://linkedin.com/in/lisachen',
+        github: 'https://github.com/lisac'
       }
     },
     {
@@ -125,8 +125,8 @@ const Members = () => {
       contact: {
         phone: '084567890123',
         email: 'david.kumar@students.undip.ac.id',
-        linkedin: 'davidkumar',
-        github: 'dkumar'
+        linkedin: 'https://linkedin.com/in/davidkumar',
+        github: 'https://github.com/dkumar'
       }
     },
     // 2023 Members
@@ -143,8 +143,8 @@ const Members = () => {
       contact: {
         phone: '083456789012',
         email: 'diana.putri@students.undip.ac.id',
-        linkedin: 'dianaputri',
-        github: 'dputri'
+        linkedin: 'https://linkedin.com/in/dianaputri',
+        github: 'https://github.com/dputri'
       }
     },
     {
@@ -160,7 +160,7 @@ const Members = () => {
       contact: {
         phone: '084567890123',
         email: 'budi.santoso@students.undip.ac.id',
-        linkedin: 'budisantoso',
+        linkedin: 'https://linkedin.com/in/budisantoso',
         github: null
       }
     },
@@ -177,8 +177,8 @@ const Members = () => {
       contact: {
         phone: '085678901234',
         email: 'maria.santos@students.undip.ac.id',
-        linkedin: 'mariasantos',
-        github: 'msantos'
+        linkedin: 'https://linkedin.com/in/mariasantos',
+        github: 'https://github.com/msantos'
       }
     }
   ];
@@ -289,8 +289,6 @@ const Members = () => {
               {index < years.length - 1 && (
                 <div className="w-0.5 h-8 bg-gray-300 mx-auto" />
               )}
-              
-
             </div>
           ))}
         </div>
@@ -311,10 +309,10 @@ const Members = () => {
         <section className="py-20">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
                 Leadership Team - {selectedYear}
               </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 The core team members who drive our vision and lead our technical initiatives
               </p>
             </div>
@@ -433,7 +431,9 @@ const MemberCard = ({ member }) => {
             </a>
             {member.contact.linkedin && (
               <a
-                href={`https://linkedin.com/in/${member.contact.linkedin}`}
+                href={member.contact.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-tech-blue transition-colors"
               >
                 <Linkedin className="h-4 w-4" />
@@ -441,7 +441,9 @@ const MemberCard = ({ member }) => {
             )}
             {member.contact.github && (
               <a
-                href={`https://github.com/${member.contact.github}`}
+                href={member.contact.github}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-tech-blue transition-colors"
               >
                 <Github className="h-4 w-4" />
