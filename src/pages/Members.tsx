@@ -15,6 +15,7 @@ const Members = () => {
       department: 'Mechanical Engineering',
       year: '5th Year',
       joinYear: 2025,
+      division: 'Official',
       image: 'https://media.licdn.com/dms/image/v2/D4D03AQECgh5OkLhvNA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1706764420491?e=1756339200&v=beta&t=U--G_2tB7vr7JYaRCluCICCdEUDu2fbkGxfZi18faHc',
       bio: 'Leading project coordination and strategic planning for all robotics competitions. Specializes in system integration and team management.',
       skills: ['Project Management', 'System Integration', 'Leadership', 'Strategic Planning'],
@@ -31,6 +32,7 @@ const Members = () => {
       department: 'Electrical Engineering',
       year: '3rd Year',
       joinYear: 2025,
+      division: 'Official',
       image: 'https://media.licdn.com/dms/image/v2/D4E03AQHN1I1cQiQGTw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1699149581493?e=1756339200&v=beta&t=tF_jtuWoxcbxxTqE-KYnCQXsd3dEClZfi-CGUfDxa3U',
       bio: 'Responsible for team operations, resource management, and administrative coordination. Ensures smooth workflow and effective communication.',
       skills: ['Operations Management', 'Resource Planning', 'Communication', 'Process Optimization'],
@@ -47,6 +49,7 @@ const Members = () => {
       department: 'Electrical Engineering',
       year: '3rd Year',
       joinYear: 2025,
+      division: 'Electrical',
       image: 'https://media.licdn.com/dms/image/v2/D5603AQEvlHmgFBCq6w/profile-displayphoto-shrink_800_800/B56ZX2ranXHQAg-/0/1743600331886?e=1756339200&v=beta&t=9aSQN7bqmONVPuMCgnaP97utEFx_Op4fDHmQzSR3Ies',
       bio: 'Technical leader focusing on guiding the team, motivating members, and ensuring project alignment with technical goals. Expert in electrical systems and robotics.',
       skills: ['Electrical Design', 'Circuit Analysis', 'Robotics', 'Technical Leadership'],
@@ -64,6 +67,7 @@ const Members = () => {
       department: 'Computer Science',
       year: '4th Year',
       joinYear: 2024,
+      division: 'Programming',
       image: null,
       bio: 'Led the development of autonomous navigation systems and AI algorithms. Expert in ROS and computer vision.',
       skills: ['Python', 'ROS', 'Computer Vision', 'Machine Learning'],
@@ -80,6 +84,7 @@ const Members = () => {
       department: 'Electrical Engineering',
       year: '3rd Year',
       joinYear: 2024,
+      division: 'Electrical',
       image: null,
       bio: 'Specialized in PCB design and embedded systems. Developed control systems for various robot competitions.',
       skills: ['PCB Design', 'Arduino', 'Embedded Systems', 'Control Systems'],
@@ -96,6 +101,7 @@ const Members = () => {
       department: 'Computer Science',
       year: '4th Year',
       joinYear: 2024,
+      division: 'Programming',
       image: null,
       bio: 'Expert in machine learning and computer vision algorithms for autonomous robotics systems.',
       skills: ['TensorFlow', 'OpenCV', 'Deep Learning', 'Python'],
@@ -112,6 +118,7 @@ const Members = () => {
       department: 'Electrical Engineering',
       year: '3rd Year',
       joinYear: 2024,
+      division: 'Electrical',
       image: null,
       bio: 'Responsible for system integration and testing of robotic platforms.',
       skills: ['System Design', 'Testing', 'Integration', 'Documentation'],
@@ -129,6 +136,7 @@ const Members = () => {
       department: 'Mechanical Engineering',
       year: '5th Year',
       joinYear: 2023,
+      division: 'Mechanical',
       image: null,
       bio: 'Expert in CAD design and mechanical analysis. Designed award-winning robot chassis.',
       skills: ['SolidWorks', 'ANSYS', 'CAD/CAM', '3D Printing'],
@@ -145,6 +153,7 @@ const Members = () => {
       department: 'Industrial Engineering',
       year: '4th Year',
       joinYear: 2023,
+      division: 'Official',
       image: null,
       bio: 'Managed project timelines and resources. Ensured successful competition participation.',
       skills: ['Project Management', 'Agile', 'Team Coordination', 'Documentation'],
@@ -161,6 +170,7 @@ const Members = () => {
       department: 'Computer Science',
       year: '5th Year',
       joinYear: 2023,
+      division: 'Programming',
       image: null,
       bio: 'Leading research initiatives in autonomous navigation and sensor fusion.',
       skills: ['Research', 'SLAM', 'Sensor Fusion', 'ROS'],
@@ -209,32 +219,53 @@ const Members = () => {
     );
   };
 
+  // Calculate division counts for selected year
+  const calculateDivisionCounts = () => {
+    const yearMembers = members.filter(m => m.joinYear === selectedYear);
+    const counts = {
+      Mechanical: 0,
+      Electrical: 0,
+      Programming: 0,
+      Official: 0
+    };
+    
+    yearMembers.forEach(member => {
+      if (member.division && counts.hasOwnProperty(member.division)) {
+        counts[member.division]++;
+      }
+    });
+    
+    return counts;
+  };
+
+  const divisionCounts = calculateDivisionCounts();
+
   const divisions = [
     {
       name: 'Mechanical Division',
+      key: 'Mechanical',
       description: 'Robot design, manufacturing, and mechanical systems',
-      memberCount: 10,
       color: 'bg-robot-orange'
     },
     {
-      name: 'Electronics Division',
+      name: 'Electrical Division', 
+      key: 'Electrical',
       description: 'Circuit design, PCB development, and electronic systems',
-      memberCount: 9,
       color: 'bg-tech-blue'
     },
     {
       name: 'Programming Division',
+      key: 'Programming',
       description: 'Software development, AI algorithms, and robot control',
-      memberCount: 11,
       color: 'bg-success-green'
     },
     {
-      name: 'Management Division',
+      name: 'Official Division',
+      key: 'Official',
       description: 'Project coordination, documentation, and team operations',
-      memberCount: 6,
       color: 'bg-accent'
     }
-  ];
+  ].filter(division => divisionCounts[division.key] > 0); // Filter out divisions with 0 members
 
   return (
     <div className="min-h-screen">
@@ -258,6 +289,7 @@ const Members = () => {
               {index < years.length - 1 && (
                 <div className="w-0.5 h-8 bg-gray-300 mx-auto" />
               )}
+              
 
             </div>
           ))}
@@ -303,17 +335,17 @@ const Members = () => {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            <div className={`grid md:grid-cols-2 ${divisions.length === 4 ? 'lg:grid-cols-4' : divisions.length === 3 ? 'lg:grid-cols-3' : 'lg:grid-cols-2'} gap-6 max-w-6xl mx-auto`}>
               {divisions.map((division, index) => (
                 <Card key={index} className="shadow-elevation-medium hover:shadow-elevation-high transition-all duration-300 hover:-translate-y-1">
                   <CardContent className="p-6 text-center">
                     <div className={`w-16 h-16 ${division.color} rounded-full mx-auto mb-4 flex items-center justify-center`}>
-                      <span className="text-2xl font-bold text-white">{division.memberCount}</span>
+                      <span className="text-2xl font-bold text-white">{divisionCounts[division.key]}</span>
                     </div>
                     <h3 className="text-lg font-bold text-foreground mb-2">{division.name}</h3>
                     <p className="text-muted-foreground text-sm mb-3">{division.description}</p>
                     <p className="text-xs text-muted-foreground">
-                      {division.memberCount} Members
+                      {divisionCounts[division.key]} Members
                     </p>
                   </CardContent>
                 </Card>
