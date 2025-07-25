@@ -6,14 +6,26 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Middleware
-app.use(cors());
+// Hanya izinkan origin frontend-mu
+const corsOptions = {
+  origin: 'https://bandhayudha.icu',
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true,
+  optionsSuccessStatus: 204
+};
+
+// Enable CORS untuk semua route dengan opsi di atas
+app.use(cors(corsOptions));
+// Enable preflight untuk semua route
+app.options('*', cors(corsOptions));
+
 app.use(express.json());
 
 // UltraMsg Configuration
-const ULTRAMSG_INSTANCE_ID = 'instance135111';
-const ULTRAMSG_TOKEN = 'gnww78b0rjwsf143';
-const ULTRAMSG_URL = `https://api.ultramsg.com/${ULTRAMSG_INSTANCE_ID}/messages/chat`;
+const ULTRAMSG_INSTANCE_ID = process.env.ULTRAMSG_INSTANCE_ID || 'instance135111';
+const ULTRAMSG_TOKEN       = process.env.ULTRAMSG_TOKEN       || 'gnww78b0rjwsf143';
+const ULTRAMSG_URL         = `https://api.ultramsg.com/${ULTRAMSG_INSTANCE_ID}/messages/chat`;
 
 // Route untuk mengirim pesan WhatsApp dan Email
 app.post('/api/contact', async (req, res) => {
@@ -60,14 +72,14 @@ Pesan otomatis dari website Bandhayudha UNDIP`;
       body: whatsappMessage
     };
 
-    const whatsappResponse = await axios.post(ULTRAMSG_URL, whatsappData, {
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      params: {
-        token: ULTRAMSG_TOKEN
+    const whatsappResponse = await axios.post(
+      ULTRAMSG_URL,
+      whatsappData,
+      {
+        headers: { 'Content-Type': 'application/json' },
+        params:  { token: ULTRAMSG_TOKEN }
       }
-    });
+    );
 
     console.log('WhatsApp sent successfully:', whatsappResponse.data);
 
@@ -77,7 +89,7 @@ Pesan otomatis dari website Bandhayudha UNDIP`;
       message: 'Pesan berhasil dikirim ke WhatsApp dan Email!',
       data: {
         whatsapp: whatsappResponse.data,
-        emailSent: true // EmailJS akan dihandle di frontend
+        emailSent: true // EmailJS akan di-handle di frontend
       }
     });
 
