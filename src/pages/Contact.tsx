@@ -11,6 +11,8 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { useToast } from '@/hooks/use-toast';
 import emailjs from '@emailjs/browser';
+import { API_BASE_URL } from '../config';
+
 
 const Contact = () => {
   const { toast } = useToast();
@@ -73,7 +75,7 @@ const Contact = () => {
 
   const sendToBackend = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/contact', {
+      const response = await fetch(`${API_BASE_URL}/api/contact`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
