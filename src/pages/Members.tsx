@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Github, Linkedin, Mail, User } from 'lucide-react';
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 
 const Members = () => {
   const [selectedYear, setSelectedYear] = useState(2025);
@@ -241,16 +243,16 @@ const Members = () => {
         <div className="flex flex-col items-center space-y-4">
           {years.map((year, index) => (
             <div key={year} className="relative group">
-              <button
+              <div
                 onMouseEnter={() => setSelectedYear(year)}
-                className={`w-12 h-12 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-300 ${
+                className={`w-12 h-12 rounded-full flex items-center justify-center text-sm font-bold transition-all duration-300 cursor-pointer ${
                   selectedYear === year
                     ? 'bg-blue-600 text-white scale-110 shadow-lg' 
                     : 'bg-gray-200 text-gray-600 hover:bg-gray-300'
                 }`}
               >
                 {year}
-              </button>
+              </div>
               {index < years.length - 1 && (
                 <div className="w-0.5 h-8 bg-gray-300 mx-auto mt-2" />
               )}
@@ -264,6 +266,7 @@ const Members = () => {
         </div>
       </div>
 
+      <Navigation />
       <div className="pt-16">
         {/* Hero Section */}
         <section className="py-20 bg-gradient-to-br from-blue-600 to-purple-700 text-white">
@@ -346,6 +349,7 @@ const Members = () => {
           </div>
         </section>
       </div>
+      <Footer />
     </div>
   );
 };
