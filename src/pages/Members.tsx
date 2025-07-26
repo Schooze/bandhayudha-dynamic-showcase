@@ -231,7 +231,7 @@ const Members = () => {
           {/* First member centered */}
           {firstMember.length > 0 && (
             <div className="flex justify-center max-w-7xl mx-auto">
-              <div className="w-full max-w-xs">
+              <div className="w-full max-w-[280px]">
                 <MemberCard member={firstMember[0]} />
               </div>
             </div>
