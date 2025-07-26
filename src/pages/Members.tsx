@@ -222,12 +222,29 @@ const Members = () => {
         </div>
       );
     } else {
-      // Tahun 2024 ke bawah: 1 orang pertama menggunakan grid 4 kolom yang sama, sisanya 4 kolom
+      // Tahun 2024 ke bawah: 1 orang pertama di tengah dengan ukuran card yang sama, sisanya 4 kolom
+      const firstMember = members.slice(0, 1);
+      const remainingMembers = members.slice(1);
+
       return (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
-          {members.map((member, index) => (
-            <MemberCard key={`member-${index}`} member={member} />
-          ))}
+        <div className="space-y-8">
+          {/* First member centered with same card size */}
+          {firstMember.length > 0 && (
+            <div className="flex justify-center max-w-7xl mx-auto">
+              <div className="grid grid-cols-1 gap-6" style={{ maxWidth: '280px' }}>
+                <MemberCard member={firstMember[0]} />
+              </div>
+            </div>
+          )}
+
+          {/* Remaining members in 4 columns */}
+          {remainingMembers.length > 0 && (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+              {remainingMembers.map((member, index) => (
+                <MemberCard key={`remaining-${index}`} member={member} />
+              ))}
+            </div>
+          )}
         </div>
       );
     }
