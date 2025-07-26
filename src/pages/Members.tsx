@@ -68,7 +68,7 @@ const Members = () => {
       year: '3rd Year',
       joinYear: 2025,
       division: 'Programming',
-      image: 'https://media.licdn.com/dms/image/v2/D4D03AQECgh5OkLhvNA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1706764420491?e=1756339200&v=beta&t=U--G_2tB7vr7JYaRCluCICCdEUDu2fbkGxfZi18faHc',
+      image: null, // No photo available
       bio: 'Specializes in dataset segmentation, computer vision programming, and movement prediction in programming division.',
       skills: ['Computer Vision', 'Machine Learning', 'Image Processing', 'Python'],
       contact: {
@@ -120,7 +120,7 @@ const Members = () => {
       year: '3rd Year',
       joinYear: 2024,
       division: 'Programming',
-      image: '',
+      image: null,
       bio: 'Specializes in dataset segmentation, computer vision programming, and movement prediction in programming division.',
       skills: ['Computer Vision', 'Machine Learning', 'Image Processing', 'Python'],
       contact: {
