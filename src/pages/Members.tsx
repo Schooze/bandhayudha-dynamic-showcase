@@ -230,8 +230,8 @@ const Members = () => {
         <div className="space-y-8">
           {/* First member centered */}
           {firstMember.length > 0 && (
-            <div className="flex justify-center max-w-6xl mx-auto">
-              <div className="w-full max-w-sm">
+            <div className="flex justify-center max-w-7xl mx-auto">
+              <div className="w-full max-w-xs">
                 <MemberCard member={firstMember[0]} />
               </div>
             </div>
