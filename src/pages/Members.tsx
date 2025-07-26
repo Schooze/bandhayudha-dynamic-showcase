@@ -104,7 +104,7 @@ const Members = () => {
       division: 'Mechanical',
       image: null, // No photo available
       bio: 'Specializes in manufacturing and production optimization, with experience in process planning, quality control, and tools like SolidWorks, CNC machining, and Autodesk Inventor.',
-      skills: ['CAD/CAM', '3D Modeling', 'Manufacturing', 'Quality Control'],
+      skills: ['CAD/CAM', 'CNC Machining', '3D Modeling', 'Manufacturing', 'Quality Control'],
       contact: {
         phone: '083862269503',
         email: 'yudhaaliyahya@gmail.com',
