@@ -152,7 +152,7 @@ const Members = () => {
       role: 'CAD Engineer',
       department: 'Automation Engineering',
       year: '2nd Year',
-      joinYear: 2025,
+      joinYear: 2024,
       division: 'Mechanical',
       image: 'https://media.licdn.com/dms/image/v2/D4E03AQH-5MfAjbOBoQ/profile-displayphoto-shrink_800_800/B4EZNcxfKEHwAg-/0/1732428297980?e=1756339200&v=beta&t=NUrXquABh0GM0StYb0CrhqtlvbvmFkNx_m1wnO6_GaQ',
       bio: 'Specializes in CAD design, 3D modeling, manufacturing processes, and engineering design.',
