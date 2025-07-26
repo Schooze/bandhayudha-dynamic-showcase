@@ -51,7 +51,7 @@ const Members = () => {
       year: '3rd Year',
       joinYear: 2025,
       division: 'Electrical',
-      image: 'https://media.licdn.com/dms/image/v2/D5603AQEvlHmgFBCq6w/profile-displayphoto-shrink_800_800/B56ZX2ranXHQAg-/0/1743600331886?e=1756339200&v=beta&t=9aSQN7bqmONVVPuMCgnaP97utEFx_Op4fDHmQzSR3Ies',
+      image: 'https://media.licdn.com/dms/image/v2/D5603AQEvlHmgFBCq6w/profile-displayphoto-shrink_800_800/B56ZX2ranXHQAg-/0/1743600331886?e=1756339200&v=beta&t=9aSQN7bqmONVPuMCgnaP97utEFx_Op4fDHmQzSR3Ies',
       bio: 'Technical leader focusing on guiding the team, motivating members, and ensuring project alignment with technical goals. Expert in electrical systems and robotics.',
       skills: ['Electrical Design', 'Circuit Analysis', 'Robotics', 'Technical Leadership'],
       contact: {
