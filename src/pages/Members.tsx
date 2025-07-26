@@ -9,6 +9,7 @@ const Members = () => {
   const [selectedYear, setSelectedYear] = useState(2025);
   
   const members = [
+    //2025 Members
     {
       name: 'Aufa Abdillah',
       role: 'Project Manager',
@@ -22,8 +23,8 @@ const Members = () => {
       contact: {
         phone: '085942167648',
         email: 'aufa.abdillah@students.undip.ac.id',
-        linkedin: 'https://linkedin.com/in/aufaabdillah',
-        github: 'https://github.com/aufaabdillah'
+        linkedin: 'https://www.linkedin.com/in/aufa-rofiqi-abdillah-594b381b9/',
+        github: null
       }
     },
     {
@@ -39,7 +40,7 @@ const Members = () => {
       contact: {
         phone: '0895811430123',
         email: 'mega.adinda@students.undip.ac.id',
-        linkedin: 'https://linkedin.com/in/megaadinda',
+        linkedin: 'https://www.linkedin.com/in/mega-adinda-0aab2b299/',
         github: null
       }
     },
@@ -62,54 +63,37 @@ const Members = () => {
     },
     // 2024 Members
     {
-      name: 'Sarah Wijaya',
-      role: 'Software Lead',
-      department: 'Computer Science',
+      name: 'Aufa Abdillah',
+      role: 'Team Leader',
+      department: 'Mechanical Engineering',
       year: '4th Year',
       joinYear: 2024,
-      division: 'Programming',
-      image: null,
-      bio: 'Led the development of autonomous navigation systems and AI algorithms. Expert in ROS and computer vision.',
-      skills: ['Python', 'ROS', 'Computer Vision', 'Machine Learning'],
+      division: 'Official',
+      image: 'https://media.licdn.com/dms/image/v2/D4D03AQECgh5OkLhvNA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1706764420491?e=1756339200&v=beta&t=U--G_2tB7vr7JYaRCluCICCdEUDu2fbkGxfZi18faHc',
+      bio: 'Technical leader focusing on guiding the team, motivating members, and ensuring project alignment with technical goals.',
+      skills: ['Project Management', 'System Integration', 'Leadership', 'Strategic Planning'],
       contact: {
-        phone: '081234567890',
-        email: 'sarah.wijaya@students.undip.ac.id',
-        linkedin: 'https://linkedin.com/in/sarahwijaya',
-        github: 'https://github.com/sarahw'
-      }
-    },
-    {
-      name: 'Ahmad Rizki',
-      role: 'Hardware Engineer',
-      department: 'Electrical Engineering',
-      year: '3rd Year',
-      joinYear: 2024,
-      division: 'Electrical',
-      image: null,
-      bio: 'Specialized in PCB design and embedded systems. Developed control systems for various robot competitions.',
-      skills: ['PCB Design', 'Arduino', 'Embedded Systems', 'Control Systems'],
-      contact: {
-        phone: '082345678901',
-        email: 'ahmad.rizki@students.undip.ac.id',
-        linkedin: null,
+        phone: '085942167648',
+        email: 'aufa.abdillah@students.undip.ac.id',
+        linkedin: 'https://www.linkedin.com/in/aufa-rofiqi-abdillah-594b381b9/',
         github: null
       }
     },
     {
-      name: 'Lisa Chen',
-      role: 'AI Specialist',
-      department: 'Computer Science',
+      name: 'Mohammad Sirojudin Munir',
+      role: 'Project Manager',
+      department: 'Electrical Engineering',
       year: '4th Year',
       joinYear: 2024,
       division: 'Programming',
-      image: null,
-      bio: 'Expert in machine learning and computer vision algorithms for autonomous robotics systems.',
-      skills: ['TensorFlow', 'OpenCV', 'Deep Learning', 'Python'],
+      image: 'https://media.licdn.com/dms/image/v2/D5603AQFqfLbvPe7oTA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1723256679448?e=1756339200&v=beta&t=pTDT1k__IzmCwlnhy4cRfEoCVk9x4g_uxDUh-NbMN-k',
+      bio: 'Led the development of autonomous navigation systems and swerve drive modules. Master in STM32.',
+      skills: ['STM32', 'C/C++', 'Python', 'CAN Bus'],
       contact: {
-        phone: '083456789012',
-        email: 'lisa.chen@students.undip.ac.id',
-        linkedin: 'https://linkedin.com/in/lisachen',
-        github: 'https://github.com/lisac'
+        phone: '+62 812-2554-1059',
+        email: 'mohammad.sirojudin@students.undip.ac.id',
+        linkedin: 'https://www.linkedin.com/in/moh-sirojudin-munir-3b01561b1/',
+        github: 'https://github.com/sirojudinMunir'
       }
     },
     {
@@ -127,6 +111,23 @@ const Members = () => {
         email: 'david.kumar@students.undip.ac.id',
         linkedin: 'https://linkedin.com/in/davidkumar',
         github: 'https://github.com/dkumar'
+      }
+    },
+    {
+      name: 'Ahmad Rizki',
+      role: 'Hardware Engineer',
+      department: 'Electrical Engineering',
+      year: '3rd Year',
+      joinYear: 2024,
+      division: 'Electrical',
+      image: null,
+      bio: 'Specialized in PCB design and embedded systems. Developed control systems for various robot competitions.',
+      skills: ['PCB Design', 'Arduino', 'Embedded Systems', 'Control Systems'],
+      contact: {
+        phone: '082345678901',
+        email: 'ahmad.rizki@students.undip.ac.id',
+        linkedin: null,
+        github: null
       }
     },
     // 2023 Members
@@ -193,30 +194,60 @@ const Members = () => {
   const renderMembersGrid = (members) => {
     if (members.length === 0) return null;
 
-    const firstThreeMembers = members.slice(0, 3);
-    const remainingMembers = members.slice(3);
+    // Layout berdasarkan tahun
+    if (selectedYear >= 2025) {
+      // Tahun 2025 ke atas: 3 orang pertama, sisanya 4 kolom
+      const firstThreeMembers = members.slice(0, 3);
+      const remainingMembers = members.slice(3);
 
-    return (
-      <div className="space-y-8">
-        {/* First 3 members in 3 columns */}
-        {firstThreeMembers.length > 0 && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {firstThreeMembers.map((member, index) => (
-              <MemberCard key={`first-${index}`} member={member} />
-            ))}
-          </div>
-        )}
+      return (
+        <div className="space-y-8">
+          {/* First 3 members in 3 columns */}
+          {firstThreeMembers.length > 0 && (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+              {firstThreeMembers.map((member, index) => (
+                <MemberCard key={`first-${index}`} member={member} />
+              ))}
+            </div>
+          )}
 
-        {/* Remaining members in 4 columns */}
-        {remainingMembers.length > 0 && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
-            {remainingMembers.map((member, index) => (
-              <MemberCard key={`remaining-${index}`} member={member} />
-            ))}
-          </div>
-        )}
-      </div>
-    );
+          {/* Remaining members in 4 columns */}
+          {remainingMembers.length > 0 && (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+              {remainingMembers.map((member, index) => (
+                <MemberCard key={`remaining-${index}`} member={member} />
+              ))}
+            </div>
+          )}
+        </div>
+      );
+    } else {
+      // Tahun 2024 ke bawah: 1 orang pertama di tengah, sisanya 4 kolom
+      const firstMember = members.slice(0, 1);
+      const remainingMembers = members.slice(1);
+
+      return (
+        <div className="space-y-8">
+          {/* First member centered */}
+          {firstMember.length > 0 && (
+            <div className="flex justify-center max-w-6xl mx-auto">
+              <div className="w-full max-w-sm">
+                <MemberCard member={firstMember[0]} />
+              </div>
+            </div>
+          )}
+
+          {/* Remaining members in 4 columns */}
+          {remainingMembers.length > 0 && (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+              {remainingMembers.map((member, index) => (
+                <MemberCard key={`remaining-${index}`} member={member} />
+              ))}
+            </div>
+          )}
+        </div>
+      );
+    }
   };
 
   // Calculate division counts for selected year
