@@ -61,6 +61,23 @@ const Members = () => {
         github: 'https://github.com/helmiyusuf'
       }
     },
+    {
+      name: 'I Made Khrisna Swastika',
+      role: 'Computer Vision Engineering',
+      department: 'Electrical Engineering',
+      year: '3rd Year',
+      joinYear: 2025,
+      division: 'Programming',
+      image: 'https://media.licdn.com/dms/image/v2/D4D03AQECgh5OkLhvNA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1706764420491?e=1756339200&v=beta&t=U--G_2tB7vr7JYaRCluCICCdEUDu2fbkGxfZi18faHc',
+      bio: 'Specializes in dataset segmentation, computer vision programming, and movement prediction in programming division.',
+      skills: ['Computer Vision', 'Machine Learning', 'Image Processing', 'Python'],
+      contact: {
+        phone: '081936666677',
+        email: 'khrisnaswastika000@gmail.com',
+        linkedin: 'https://www.linkedin.com/in/i-made-khrisna-swastika-35ab03360/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+        github: null
+      }
+    },
     // 2024 Members
     {
       name: 'Aufa Abdillah',
@@ -97,20 +114,20 @@ const Members = () => {
       }
     },
     {
-      name: 'David Kumar',
-      role: 'Systems Engineer',
+      name: 'I Made Khrisna Swastika',
+      role: 'Computer Vision Engineering',
       department: 'Electrical Engineering',
       year: '3rd Year',
       joinYear: 2024,
-      division: 'Electrical',
-      image: null,
-      bio: 'Responsible for system integration and testing of robotic platforms.',
-      skills: ['System Design', 'Testing', 'Integration', 'Documentation'],
+      division: 'Programming',
+      image: 'https://media.licdn.com/dms/image/v2/D4D03AQECgh5OkLhvNA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1706764420491?e=1756339200&v=beta&t=U--G_2tB7vr7JYaRCluCICCdEUDu2fbkGxfZi18faHc',
+      bio: 'Specializes in dataset segmentation, computer vision programming, and movement prediction in programming division.',
+      skills: ['Computer Vision', 'Machine Learning', 'Image Processing', 'Python'],
       contact: {
-        phone: '084567890123',
-        email: 'david.kumar@students.undip.ac.id',
-        linkedin: 'https://linkedin.com/in/davidkumar',
-        github: 'https://github.com/dkumar'
+        phone: '081936666677',
+        email: 'khrisnaswastika000@gmail.com',
+        linkedin: 'https://www.linkedin.com/in/i-made-khrisna-swastika-35ab03360/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+        github: null
       }
     },
     {
