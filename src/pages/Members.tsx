@@ -95,6 +95,40 @@ const Members = () => {
         github: null
       }
     },
+    {
+      name: 'Yudha Ali Yahya',
+      role: 'Manufacturing Engineer',
+      department: 'Mechanical Engineering',
+      year: '1st Year',
+      joinYear: 2025,
+      division: 'Mechanical',
+      image: null, // No photo available
+      bio: 'Specializes in manufacturing and production optimization, with experience in process planning, quality control, and tools like SolidWorks, CNC machining, and Autodesk Inventor.',
+      skills: ['CAD/CAM', '3D Modeling', 'Manufacturing', 'Quality Control'],
+      contact: {
+        phone: '083862269503',
+        email: 'yudhaaliyahya@gmail.com',
+        linkedin: null,
+        github: null
+      }
+    },
+    {
+      name: 'Novanda Putra Widya Ardhi',
+      role: 'Embedded Software Engineer',
+      department: 'Electrical Engineering',
+      year: '2nd Year',
+      joinYear: 2025,
+      division: 'Programming',
+      image: 'https://media.licdn.com/dms/image/v2/D5603AQEEEJBLNI5Usw/profile-displayphoto-shrink_800_800/B56ZdVNU_PG0Ao-/0/1749481248279?e=1756339200&v=beta&t=tI-3VerP5u565s3VfBKt_WY8dn1BaxKv883wPjBr3uA',
+      bio: 'Focused on embedded system development and electronic hardware integration, with proven experience leading interdisciplinary field and delivering robust, production-ready solutions',
+      skills: ['STM32', 'Embedded C', 'Computer Vision', 'RTOS', 'PCB Design', 'Soldering'],
+      contact: {
+        phone: '081227962465',
+        email: 'ardhinovanda@gmail.com',
+        linkedin: 'https://www.linkedin.com/in/novanda-putra-widya-ardhi',
+        github: null
+      }
+    },
     // 2024 Members
     {
       name: 'Aufa Abdillah',
@@ -122,7 +156,7 @@ const Members = () => {
       division: 'Programming',
       image: 'https://media.licdn.com/dms/image/v2/D5603AQFqfLbvPe7oTA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1723256679448?e=1756339200&v=beta&t=pTDT1k__IzmCwlnhy4cRfEoCVk9x4g_uxDUh-NbMN-k',
       bio: 'Led the development of autonomous navigation systems and swerve drive modules. Master in STM32.',
-      skills: ['STM32', 'C/C++', 'Python', 'CAN Bus'],
+      skills: ['STM32', 'C/C++', 'Python', 'CAN Bus', 'RTOS'],
       contact: {
         phone: '+62 812-2554-1059',
         email: 'mohammad.sirojudin@students.undip.ac.id',
@@ -161,6 +195,23 @@ const Members = () => {
         phone: '085858504944',
         email: 'dnnsrdty@gmail.com',
         linkedin: 'https://www.linkedin.com/in/dennis-raditya-4bb0472b4/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+        github: null
+      }
+    },
+        {
+      name: 'Novanda Putra Widya Ardhi',
+      role: 'Embedded Software Engineer',
+      department: 'Electrical Engineering',
+      year: '2nd Year',
+      joinYear: 2024,
+      division: 'Programming',
+      image: 'https://media.licdn.com/dms/image/v2/D5603AQEEEJBLNI5Usw/profile-displayphoto-shrink_800_800/B56ZdVNU_PG0Ao-/0/1749481248279?e=1756339200&v=beta&t=tI-3VerP5u565s3VfBKt_WY8dn1BaxKv883wPjBr3uA',
+      bio: 'Focused on embedded system development and electronic hardware integration, with proven experience leading interdisciplinary field and delivering robust, production-ready solutions',
+      skills: ['STM32', 'Embedded C', 'Computer Vision', 'RTOS', 'PCB Design', 'Soldering'],
+      contact: {
+        phone: '081227962465',
+        email: 'ardhinovanda@gmail.com',
+        linkedin: 'https://www.linkedin.com/in/novanda-putra-widya-ardhi',
         github: null
       }
     },
