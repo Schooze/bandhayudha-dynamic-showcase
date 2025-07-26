@@ -65,7 +65,7 @@ const Members = () => {
       name: 'I Made Khrisna Swastika',
       role: 'Computer Vision Engineering',
       department: 'Electrical Engineering',
-      year: '3rd Year',
+      year: '2nd Year',
       joinYear: 2025,
       division: 'Programming',
       image: null, // No photo available
@@ -75,6 +75,23 @@ const Members = () => {
         phone: '081936666677',
         email: 'khrisnaswastika000@gmail.com',
         linkedin: 'https://www.linkedin.com/in/i-made-khrisna-swastika-35ab03360/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+        github: null
+      }
+    },
+    {
+      name: 'Dennis Raditya',
+      role: 'CAD Engineer',
+      department: 'Automation Engineering',
+      year: '2nd Year',
+      joinYear: 2025,
+      division: 'Mechanical',
+      image: 'https://media.licdn.com/dms/image/v2/D4E03AQH-5MfAjbOBoQ/profile-displayphoto-shrink_800_800/B4EZNcxfKEHwAg-/0/1732428297980?e=1756339200&v=beta&t=NUrXquABh0GM0StYb0CrhqtlvbvmFkNx_m1wnO6_GaQ',
+      bio: 'Specializes in CAD design, 3D modeling, manufacturing processes, and engineering design.',
+      skills: ['CAD/CAM', '3D Modeling', 'Manufacturing', 'Engineering Design'],
+      contact: {
+        phone: '085858504944',
+        email: 'dnnsrdty@gmail.com',
+        linkedin: 'https://www.linkedin.com/in/dennis-raditya-4bb0472b4/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
         github: null
       }
     },
@@ -117,7 +134,7 @@ const Members = () => {
       name: 'I Made Khrisna Swastika',
       role: 'Computer Vision Engineering',
       department: 'Electrical Engineering',
-      year: '3rd Year',
+      year: '1st Year',
       joinYear: 2024,
       division: 'Programming',
       image: null,
@@ -131,19 +148,19 @@ const Members = () => {
       }
     },
     {
-      name: 'Ahmad Rizki',
-      role: 'Hardware Engineer',
-      department: 'Electrical Engineering',
-      year: '3rd Year',
-      joinYear: 2024,
-      division: 'Electrical',
-      image: null,
-      bio: 'Specialized in PCB design and embedded systems. Developed control systems for various robot competitions.',
-      skills: ['PCB Design', 'Arduino', 'Embedded Systems', 'Control Systems'],
+      name: 'Dennis Raditya',
+      role: 'CAD Engineer',
+      department: 'Automation Engineering',
+      year: '2nd Year',
+      joinYear: 2025,
+      division: 'Mechanical',
+      image: 'https://media.licdn.com/dms/image/v2/D4E03AQH-5MfAjbOBoQ/profile-displayphoto-shrink_800_800/B4EZNcxfKEHwAg-/0/1732428297980?e=1756339200&v=beta&t=NUrXquABh0GM0StYb0CrhqtlvbvmFkNx_m1wnO6_GaQ',
+      bio: 'Specializes in CAD design, 3D modeling, manufacturing processes, and engineering design.',
+      skills: ['CAD/CAM', '3D Modeling', 'Manufacturing', 'Engineering Design'],
       contact: {
-        phone: '082345678901',
-        email: 'ahmad.rizki@students.undip.ac.id',
-        linkedin: null,
+        phone: '085858504944',
+        email: 'dnnsrdty@gmail.com',
+        linkedin: 'https://www.linkedin.com/in/dennis-raditya-4bb0472b4/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
         github: null
       }
     },
