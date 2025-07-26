@@ -51,7 +51,7 @@ const Members = () => {
       year: '3rd Year',
       joinYear: 2025,
       division: 'Electrical',
-      image: 'https://media.licdn.com/dms/image/v2/D5603AQEvlHmgFBCq6w/profile-displayphoto-shrink_800_800/B56ZX2ranXHQAg-/0/1743600331886?e=1756339200&v=beta&t=9aSQN7bqmONVPuMCgnaP97utEFx_Op4fDHmQzSR3Ies',
+      image: 'https://media.licdn.com/dms/image/v2/D5603AQEvlHmgFBCq6w/profile-displayphoto-shrink_800_800/B56ZX2ranXHQAg-/0/1743600331886?e=1756339200&v=beta&t=9aSQN7bqmONVVPuMCgnaP97utEFx_Op4fDHmQzSR3Ies',
       bio: 'Technical leader focusing on guiding the team, motivating members, and ensuring project alignment with technical goals. Expert in electrical systems and robotics.',
       skills: ['Electrical Design', 'Circuit Analysis', 'Robotics', 'Technical Leadership'],
       contact: {
@@ -222,29 +222,12 @@ const Members = () => {
         </div>
       );
     } else {
-      // Tahun 2024 ke bawah: 1 orang pertama di tengah, sisanya 4 kolom
-      const firstMember = members.slice(0, 1);
-      const remainingMembers = members.slice(1);
-
+      // Tahun 2024 ke bawah: 1 orang pertama menggunakan grid 4 kolom yang sama, sisanya 4 kolom
       return (
-        <div className="space-y-8">
-          {/* First member centered */}
-          {firstMember.length > 0 && (
-            <div className="flex justify-center max-w-7xl mx-auto mb-8">
-              <div className="w-full sm:w-80 md:w-72 lg:w-64">
-                <MemberCard member={firstMember[0]} />
-              </div>
-            </div>
-          )}
-
-          {/* Remaining members in 4 columns */}
-          {remainingMembers.length > 0 && (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
-              {remainingMembers.map((member, index) => (
-                <MemberCard key={`remaining-${index}`} member={member} />
-              ))}
-            </div>
-          )}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+          {members.map((member, index) => (
+            <MemberCard key={`member-${index}`} member={member} />
+          ))}
         </div>
       );
     }
